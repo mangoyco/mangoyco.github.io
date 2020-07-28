@@ -19,7 +19,7 @@ module.exports = {
     index: {
       entry: 'src/main.js',
       template: 'public/index.html',
-      filename: 'index.html',
+      filename: '../index.html',
       title: 'Welcome',
       minify: {
         //移除空格
