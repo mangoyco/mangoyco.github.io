@@ -1,4 +1,4 @@
-# github-io
+# mangoyco.github.io
 
 ## Project setup
 ```
