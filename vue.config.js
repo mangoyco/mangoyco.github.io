@@ -1,5 +1,22 @@
+const indexPageConfig = {
+    entry: 'src/main.js',
+    template: 'public/index.html',
+    // filename: process.env.NODE_ENV === 'production' ? '../index.html' : '',
+    title: 'Welcome',
+    minify: {
+      //移除空格
+      collapseWhitespace: false,
+      //移除注释
+      removeComments: false
+    }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  indexPageConfig.filename = '../index.html'
+}
+
 module.exports = {
-  publicPath: '/wyc',
+  publicPath: process.env.NODE_ENV === 'production' ? '/wyc' : '/',
   outputDir: 'wyc',
   productionSourceMap: false,
   configureWebpack: (config) => {
@@ -16,17 +33,18 @@ module.exports = {
     // })
   },
   pages: {
-    index: {
-      entry: 'src/main.js',
-      template: 'public/index.html',
-      filename: '../index.html',
-      title: 'Welcome',
-      minify: {
-        //移除空格
-        collapseWhitespace: false,
-        //移除注释
-        removeComments: false
-      }
-    }
+    index: indexPageConfig
+    // index: {
+    //   entry: 'src/main.js',
+    //   template: 'public/index.html',
+    //   filename: process.env.NODE_ENV === 'production' ? '../index.html' : '',
+    //   title: 'Welcome',
+    //   minify: {
+    //     //移除空格
+    //     collapseWhitespace: false,
+    //     //移除注释
+    //     removeComments: false
+    //   }
+    // }
   }
 }
