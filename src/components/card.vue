@@ -1,6 +1,6 @@
 <template>
     <div class="cardwarp" :style="{width:size[0],height:size[1],}">
-        <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt="">
+        <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
     </div>
 </template>
 <script>

@@ -1,19 +1,51 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Header/>
+    <transition name="slide-left">
+      <router-view class="_routerView"/>
+    </transition>
   </div>
 </template>
 
+<script>
+import Header from '@/components/hearder'
+
+export default {
+  components:{Header}
+}
+</script>
+
 <style lang="scss">
+// .fade-enter-active, .fade-leave-avtive {
+//     transition: opacity 1s
+// }
+// .fade-enter, .fade-leave-to {
+//     opacity: 0
+// }
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
+}
+._routerView{
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
 *{
   margin: 0%;
   padding: 0%;
+  // scroll-behavior: smooth;
 }
 span,li,.textedit,.centertitlt{
   user-select: none;
 }
 body{
-  --navlight:rgba(255,255,255,0.8)
+  --navlight:rgba(255,255,255,0.8);
+  overflow-x: hidden;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

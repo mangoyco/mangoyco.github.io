@@ -30,6 +30,13 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   // mode: 'history',
+  // scrollBehavior: (to, from, savedPosition) => { 
+  //   return new Promise(res => { 
+  //     setTimeout(() => { 
+  //       res({y:savedPosition})
+  //     },10)
+  //   })
+  // },
   base: process.env.BASE_URL,
   routes
 })

@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <Header/>
     <div class="downcontainer">
 
       <div style="padding-bottom:50px">
@@ -17,11 +16,10 @@
 // let hh = require('@/utils/export.js')
 // import * as Api from '@/api/jsonplace'
 import Card from '@/components/card'
-import Header from '@/components/hearder'
 
 export default {
   name: 'HelloWorld',
-  components:{Header,Card},
+  components:{Card},
   data () {
     return {
     }

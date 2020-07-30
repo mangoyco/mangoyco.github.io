@@ -79,7 +79,6 @@ export default {
           this.fixtop = true
         }
         this.navfixed = false
-        
       }else{
         this.fixtop = false
         this.navBgc = false
@@ -145,6 +144,7 @@ export default {
   background-attachment: fixed;
   background-position-x: 50%;
   background-position-y: center;
+  background-size: 100%;
   width: 100%;
   height:100vh;
   position: relative;

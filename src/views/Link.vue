@@ -1,6 +1,5 @@
 <template>
   <div>
-      <Header/>
       <div style="height:500px;">
         <div v-html="content"></div>
         <p>dsadsad</p>
@@ -10,11 +9,10 @@
 </template>
 
 <script>
-import Header from '@/components/hearder'
 
 export default {
     name:'Link',
-    components:{Header},
+    components:{},
     data(){
       return {
         content:'<h1>666</h1>'
