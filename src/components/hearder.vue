@@ -1,18 +1,18 @@
 <template>
     <div class="headcontain">
        <div :class="['white-nav',{'opc-nav':navBgc,'isfixed':navfixed,'fixtop':fixtop}]">
-         <span :style="navBgc ? 'color:#eee' : ''" class="nav-name">WangYC</span>
+         <!-- <span :style="navBgc ? 'color:#eee' : ''" class="nav-name">WangYC</span> -->
 
            <ul class="ullist">
              <router-link to="/" tag="li"><span class="iconfont">&#xe65a;</span>Home</router-link>
              <router-link to="/link" tag="li"><span class="iconfont">&#xe868;</span>Link</router-link>
-             <li><span class="iconfont">&#xe647;</span>About</li>
-             <li><span class="iconfont">&#xe612;</span>YC&M</li>
+             <!-- <li><span class="iconfont">&#xe647;</span>About</li>
+             <li><span class="iconfont">&#xe612;</span>YC&M</li> -->
            </ul>
 
        </div>
-       <div class="centertitlt">YC & MM</div>
-       <div class="textedit">{{text}}|</div>
+       <!-- <div class="centertitlt">YC & MM</div>
+       <div class="textedit">{{text}}|</div> -->
     </div>
 </template>
 <script>
@@ -231,6 +231,13 @@ li:hover::before{
 @keyframes top{
   from{top: -60px}
   to{top:0}
+}
+
+
+@media screen and (max-width: 1000px) {
+  .headcontain{
+    background-size: 100% 100%;
+  }
 }
 </style>
 
