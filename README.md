@@ -1,6 +1,6 @@
 # mangoyco.github.io
 
-## Project setup
+## Project mangoyco.github.io
 ```
 npm install
 ```
