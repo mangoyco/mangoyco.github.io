@@ -65,7 +65,8 @@ export default {
     height: 320px;
     border: 1px solid #eeeeee;
     border-radius: 2%;
-    position: relative;
+    position: sticky;
+    top: 20px;
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
-    <div class="cardwarp" :style="{width:size[0],height:size[1],}">
-        <img src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt="">
+    <div @click="toBlog" class="cardwarp" :style="{width:size[0],height:size[1],}">
+        <div class="img_warp">
+            <img src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt="">
+        </div>
         <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
         <div class="text_warp">
             <span>this is title 试试字体</span>
@@ -17,6 +19,11 @@ export default {
     props:{
         size:Array,
         index:Number
+    },
+    methods:{
+        toBlog(){
+            this.$router.push('/blog/2019')
+        }
     }
 }
 </script>
@@ -24,10 +31,21 @@ export default {
 .cardwarp{
     cursor: pointer;
     position: relative;
-    img{
+    .img_warp{
         height: 100%;
         width: 50%;
         position: absolute;
+        overflow: hidden;
+    }
+    img{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all .8s;
+        &:hover{
+            // transition: ;
+            transform: scale(1.1);
+        }
     }
     .text_warp{
         :first-child{
