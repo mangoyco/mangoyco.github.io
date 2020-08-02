@@ -6,9 +6,18 @@
         <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
         <div class="text_warp">
             <span>this is title 试试字体</span>
+            <span class="text_label">range-范围单位</span>
             <div class="desc">
                 balabalabalabalabalabalabalabalabalabalabalabala
                 ala在重新注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车
+            </div>
+            <div class="footer">
+                <div class="icons">
+
+                </div>
+                <span class="date">
+                    2020-12-12
+                </span>
             </div>
         </div>
     </div>
@@ -49,9 +58,11 @@ export default {
     }
     .text_warp{
         :first-child{
-            font-size: 18px;
+            font-size: 17px;
+            color: #333;
         }
         .desc{
+            text-indent: 2em;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
@@ -59,6 +70,32 @@ export default {
             text-overflow: ellipsis;
             max-height: 80%;
             word-break: break-all;
+        }
+        .text_label{
+            display: block;
+            padding: 5px 0;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #bbb;
+            font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", '微软雅黑', 'STHeiti', "WenQuanYi Micro Hei", 'SimSun', sans-serif;
+        }
+        .footer{
+            width: calc(100% - 30px);
+            height: 16%;
+            border-top: 1px solid #eee;
+            // background-color: red;
+            position: absolute;
+            display: flex;
+            bottom: 10px;
+            // justify-content: center;
+            align-content: center;
+            align-items: center;
+            .date{
+                font-size: 12px;
+                position: absolute;
+                right: 0;
+                padding-right: 20px;
+            }
         }
         color: #666;
         font-family: "Microsoft Yahei", 微软雅黑, Arial, "Hiragino Sans GB", 宋体;

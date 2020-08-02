@@ -1,5 +1,5 @@
 <template>
-  <div class="blog_router" v-html="doms">
+  <div class="blog_warp" v-html="doms">
       
   </div>
 </template>
@@ -30,5 +30,7 @@ export default {
 </script>
 
 <style scoped>
-
+.blog_warp{
+    padding: 15px 200px;
+}
 </style>
