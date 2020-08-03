@@ -3,7 +3,7 @@
     <div class="downcontainer">
 
       <div style="padding-bottom:50px">
-        <Card :size="['100%','240px']" :index="index" v-for="(item,index) in [1,2,3]" :key="index" />
+        <Card :size="['100%','240px']" :index="index" v-for="(item,index) in cards" :key="index" :info="item"/>
       </div>
       <div class="author">
         <a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
@@ -35,6 +35,32 @@ export default {
   components:{Card},
   data () {
     return {
+      cards:[
+        {
+          title:'this is title 这是测试标题',
+          range:'js,Vue',
+          url:'2019/07',
+          fileName:'test.md',
+          desc:'测试的desc',
+          date:'2020-0101',
+        },
+        {
+          title:'this is title 这是测试标题',
+          range:'js,Vue',
+          url:'2019/07',
+          fileName:'test.md',
+          desc:'测试的desc',
+          date:'2020-0101'
+        },
+        {
+          title:'this is title 这是测试标题',
+          range:'js,Vue',
+          url:'2019/07',
+          fileName:'test.md',
+          desc:'测试的desc',
+          date:'2020-0101'
+        },
+      ]
     }
   },
   mounted(){

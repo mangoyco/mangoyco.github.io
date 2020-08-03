@@ -5,8 +5,8 @@
         </div>
         <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
         <div class="text_warp">
-            <span>this is title 试试字体</span>
-            <span class="text_label">range-范围单位</span>
+            <span>{{info.title}}</span>
+            <span class="text_label">{{info.range}}</span>
             <div class="desc">
                 balabalabalabalabalabalabalabalabalabalabalabala
                 ala在重新注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车
@@ -16,7 +16,7 @@
 
                 </div>
                 <span class="date">
-                    2020-12-12
+                    {{info.date}}
                 </span>
             </div>
         </div>
@@ -27,11 +27,12 @@ export default {
     name:'card',
     props:{
         size:Array,
-        index:Number
+        index:Number,
+        info:Object
     },
     methods:{
         toBlog(){
-            this.$router.push('/blog/2019')
+            this.$router.push(`/blog/${this.info.url}`)
         }
     }
 }

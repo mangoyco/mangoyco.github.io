@@ -27,10 +27,15 @@ Vue.use(VueRouter)
     component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/blog/:path',
+    path: '/blog/:path/*',
     name: 'Blog',
     component: () => import('../views/Blog.vue')
-  }
+    },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import('../views/NotFound.vue')
+  },
 ]
 
 const router = new VueRouter({
