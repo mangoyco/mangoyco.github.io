@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <transition name="slide-left">
+    <transition name="slide-left" mode="out-in">
       <router-view class="_routerView"/>
     </transition>
   </div>

@@ -64,6 +64,12 @@ export default {
     }
   },
   mounted(){
+    console.log('mounted')
+    this.$nextTick(()=>{
+      window.scrollTo(0,localStorage.getItem('homeTop'))
+      // document.body.scrollTo(0,localStorage.getItem('homeTop'))
+      // document.documentElement.scrollTop = localStorage.getItem('homeTop')
+    })
     // console.log(process.env)
     // hh.name = 'chan'
     // console.log(hh)
@@ -74,6 +80,11 @@ export default {
     // axios.get('https://jsonplaceholder.typicode.com/posts/1').then(res=>{
     //   console.log(res)
     // })
+  },
+  beforeRouteLeave(to, from, next){
+    let top = document.documentElement.scrollTop || document.body.scrollTop;
+    localStorage.setItem('homeTop',top)
+    next()
   }
 }
 </script>
