@@ -1,5 +1,5 @@
 <template>
-    <div class="headcontain">
+    <div class="headcontain" :style="{height:(headerH ? headerH : '100vh') }">
        <div :class="['white-nav',{'opc-nav':navBgc,'isfixed':navfixed,'fixtop':fixtop}]">
          <!-- <span :style="navBgc ? 'color:#eee' : ''" class="nav-name">WangYC</span> -->
 
@@ -18,6 +18,7 @@
 <script>
 
 export default {
+  props:['headerH'],
   data(){
     return{
       text:'',
@@ -96,6 +97,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .headcontain{
+  // transition: height .3s;
   font-family:'Titillium Web', Lato, PingFang SC, Hiragino Sans GB, "Microsoft JhengHei", "Microsoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
   .white-nav{
     z-index: 100;

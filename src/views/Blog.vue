@@ -40,7 +40,7 @@ export default {
             }).then(t=>{
                 this.doms = window.marked(t)
                 this.$nextTick(()=>{
-                    window.scrollTo(0,window.innerHeight - 60)
+                    window.scrollTo(0,0)
                 })
             })
         }

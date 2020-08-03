@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header :headerH="headerH"/>
     <transition name="slide-left" mode="out-in">
       <router-view class="_routerView"/>
     </transition>
@@ -11,7 +11,22 @@
 import Header from '@/components/hearder'
 
 export default {
-  components:{Header}
+  components:{Header},
+  data(){
+    return{
+      headerH:null,
+    }
+  },
+  created(){
+    this.$router.beforeEach((to, from, next) => {
+      if(to.name === 'Blog'){
+        this.headerH = '60px'
+      }else{
+        this.headerH = null
+      }
+      next();
+    });
+  }
 }
 </script>
 
@@ -35,6 +50,14 @@ export default {
 ._routerView{
   transition: all .5s cubic-bezier(.55,0,.1,1);
 }
+
+#nprogress .bar {
+  // background: red !important; //自定义颜色
+}
+.spinner{
+  display: none !important;
+}
+
 *{
   margin: 0%;
   padding: 0%;
