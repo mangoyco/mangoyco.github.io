@@ -1,6 +1,6 @@
 <template>
   <div class="blog_router" >
-      <div class="blog typo markdown-body" v-html="doms">
+      <div id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
       </div>
   </div>
@@ -29,11 +29,12 @@ export default {
         }
     },
     mounted(){
-        console.log(this.$route)
+        // for scroll
+        this.$route.meta.y = window.innerHeight - 60
     },
     methods:{
         initMd(){
-            let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}`
+            let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}.md`
             fetch(u).then(res=>{
                 return res.text()
             }).then(t=>{

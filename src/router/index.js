@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -40,13 +40,16 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   // mode: 'history',
-  // scrollBehavior: (to, from, savedPosition) => { 
-  //   return new Promise(res => { 
-  //     setTimeout(() => { 
-  //       res({y:savedPosition})
-  //     },10)
-  //   })
-  // },
+  scrollBehavior: (to, from, savedPosition) => {
+    console.log(savedPosition)
+    if (to.name === 'Blog') {
+      return {
+        y: to.meta.y,
+      }
+    } else {
+      return savedPosition
+    }
+  },
   base: process.env.BASE_URL,
   routes
 })
