@@ -33,10 +33,8 @@ export default {
     },
     methods:{
         initMd(){
-            fetch('/test.md').then(res=>{
-                // res.text().then(t=>{
-                //     console.log(t)
-                // })
+            let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}`
+            fetch(u).then(res=>{
                 return res.text()
             }).then(t=>{
                 this.doms = window.marked(t)

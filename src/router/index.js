@@ -27,10 +27,10 @@ Vue.use(VueRouter)
     component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/blog/:path/*',
+    path: '/blog/*',
     name: 'Blog',
     component: () => import('../views/Blog.vue')
-    },
+  },
   {
     path: '*',
     name: 'NotFound',

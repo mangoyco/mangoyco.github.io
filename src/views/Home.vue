@@ -39,7 +39,7 @@ export default {
         {
           title:'this is title 这是测试标题',
           range:'js,Vue',
-          url:'2019/07',
+          url:'2020/0101',
           fileName:'test.md',
           desc:'测试的desc',
           date:'2020-0101',
@@ -47,7 +47,7 @@ export default {
         {
           title:'this is title 这是测试标题',
           range:'js,Vue',
-          url:'2019/07',
+          url:'2020/0201',
           fileName:'test.md',
           desc:'测试的desc',
           date:'2020-0101'
@@ -55,7 +55,7 @@ export default {
         {
           title:'this is title 这是测试标题',
           range:'js,Vue',
-          url:'2019/07',
+          url:'2020/0201',
           fileName:'test.md',
           desc:'测试的desc',
           date:'2020-0101'
