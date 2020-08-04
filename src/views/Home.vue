@@ -67,7 +67,6 @@ export default {
     console.log('mounted')
     this.$nextTick(()=>{
       window.scrollTo(0,localStorage.getItem('homeTop'))
-      // document.body.scrollTo(0,localStorage.getItem('homeTop'))
       // document.documentElement.scrollTop = localStorage.getItem('homeTop')
     })
     // console.log(process.env)

@@ -18,14 +18,19 @@ export default {
     }
   },
   created(){
-    this.$router.beforeEach((to, from, next) => {
-      if(to.name === 'Blog'){
-        this.headerH = '60px'
-      }else{
-        this.headerH = null
-      }
-      next();
-    });
+    this.setHbyRoute()
+  },
+  methods:{
+    setHbyRoute(){
+      this.$router.beforeEach((to, from, next) => {
+        if(to.name === 'Blog'){
+          this.headerH = '60px'
+        }else{
+          this.headerH = null
+        }
+        next();
+      });
+    }
   }
 }
 </script>
@@ -51,12 +56,14 @@ export default {
   transition: all .5s cubic-bezier(.55,0,.1,1);
 }
 
+// ----- progress style
 #nprogress .bar {
   // background: red !important; //自定义颜色
 }
 .spinner{
   display: none !important;
 }
+// ----- progress style
 
 *{
   margin: 0%;

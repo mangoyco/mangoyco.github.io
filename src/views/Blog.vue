@@ -16,23 +16,26 @@ export default {
         }
     },
     created(){
-        if(!window.hasOwnProperty('marked')){
-            var script = document.createElement('script')
-            script.id = 'marked'
-            script.src = '/static/marked.min.js'
-            script.onload = ()=>{
-                this.initMd()
-            }
-            document.body.append(script)
-        }else{
-            this.initMd()
-        }
+        this.appendMarked()
     },
     mounted(){
         // for scroll
         this.$route.meta.y = window.innerHeight - 60
     },
     methods:{
+        appendMarked(){
+            if(!window.hasOwnProperty('marked')){
+                var script = document.createElement('script')
+                script.id = 'marked'
+                script.src = '/static/marked.min.js'
+                script.onload = ()=>{
+                    this.initMd()
+                }
+                document.body.append(script)
+            }else{
+                this.initMd()
+            }
+        },
         initMd(){
             let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}.md`
             fetch(u).then(res=>{

@@ -11,14 +11,24 @@
            </ul>
 
        </div>
-       <!-- <div class="centertitlt">YC & MM</div>
-       <div class="textedit">{{text}}|</div> -->
+       <!-- <div class="centertitlt">YC & MM</div> -->
+       <!-- <div v-show="!headerH" class="textedit">{{text}}|</div> -->
     </div>
 </template>
 <script>
 
 export default {
   props:['headerH'],
+  watch:{
+    headerH(val){
+      if(val){
+        window.clearInterval(this.timer)
+        this.text = ''
+      }else{
+        this.inputtext()
+      }
+    }
+  },
   data(){
     return{
       text:'',
@@ -39,6 +49,7 @@ export default {
   methods: {
     inputtext(){
       setTimeout(()=>{
+        if(this.headerH !== null)return
         let num = 0
         let wordarr
         if(this.wordkey){
@@ -52,7 +63,7 @@ export default {
             num++
           }else{
             window.clearInterval(this.timer)
-            this.deltext()   
+            this.deltext()
           }
           // console.log(num)
         },200)
@@ -60,6 +71,7 @@ export default {
     },
     deltext(){
       setTimeout(()=>{
+        if(this.headerH !== null)return
         this.timer = window.setInterval(()=>{
           if(this.text.length == 0){
             clearInterval(this.timer)

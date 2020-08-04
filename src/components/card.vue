@@ -8,6 +8,7 @@
             <span>{{info.title}}</span>
             <span class="text_label">{{info.range}}</span>
             <div class="desc">
+                {{info.desc}}
                 balabalabalabalabalabalabalabalabalabalabalabala
                 ala在重新注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车
             </div>
