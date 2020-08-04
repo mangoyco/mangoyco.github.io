@@ -47,15 +47,15 @@ export default {
         width: 50%;
         position: absolute;
         overflow: hidden;
-    }
-    img{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        transition: all .8s;
-        &:hover{
-            // transition: ;
-            transform: scale(1.1);
+        img{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transition: all .8s;
+            &:hover{
+                // transition: ;
+                transform: scale(1.1);
+            }
         }
     }
     .text_warp{
