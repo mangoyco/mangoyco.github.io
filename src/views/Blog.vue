@@ -1,5 +1,8 @@
 <template>
   <div class="blog_router" >
+      <!-- <div style="width:auto;background-color:red;height:200px">
+
+      </div> -->
       <div id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
       </div>
@@ -27,7 +30,7 @@ export default {
             if(!window.hasOwnProperty('marked')){
                 var script = document.createElement('script')
                 script.id = 'marked'
-                script.src = '/static/marked.min.js'
+                script.src = '/static/source/marked.min.js'
                 script.onload = ()=>{
                     this.initMd()
                 }
@@ -51,9 +54,14 @@ export default {
 }
 </script>
 
-<style scoped>
-@import url('/static/md.css');
+<style lang="scss" scoped>
+@import url('/static/source/md.css');
 .blog_router{
-    padding: 15px 230px;
+    padding: 35px 230px 50px;
+    .blog{
+        border-radius: 3%;
+        padding: 0 30px;
+        background-color: #fff;
+    }
 }
 </style>

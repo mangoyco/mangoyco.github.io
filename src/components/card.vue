@@ -1,7 +1,7 @@
 <template>
     <div @click="toBlog" class="cardwarp" :style="{width:size[0],height:size[1],}">
         <div class="img_warp">
-            <img src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt="">
+            <img :src="info.imgurl ? info.imgurl : 'http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg'" :alt="info.title">
         </div>
         <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
         <div class="text_warp">
@@ -9,8 +9,6 @@
             <span class="text_label">{{info.range}}</span>
             <div class="desc">
                 {{info.desc}}
-                balabalabalabalabalabalabalabalabalabalabalabala
-                ala在重新注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车自行车注册自行车自行车
             </div>
             <div class="footer">
                 <div class="icons">
@@ -77,7 +75,7 @@ export default {
             display: block;
             padding: 5px 0;
             margin-bottom: 12px;
-            font-size: 14px;
+            font-size: 12px;
             color: #bbb;
             font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", '微软雅黑', 'STHeiti', "WenQuanYi Micro Hei", 'SimSun', sans-serif;
         }
