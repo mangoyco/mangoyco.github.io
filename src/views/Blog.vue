@@ -41,10 +41,8 @@ export default {
         },
         initMd(){
             let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}.md`
-            fetch(u).then(res=>{
-                return res.text()
-            }).then(t=>{
-                this.doms = window.marked(t)
+            this.$axios.get(u).then(res=>{
+                this.doms = window.marked(res.data)
                 this.$nextTick(()=>{
                     window.scrollTo(0,0)
                 })

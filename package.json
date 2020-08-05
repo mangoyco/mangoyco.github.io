@@ -8,6 +8,7 @@
     "devbuild": "vue-cli-service build --mode development"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "nprogress": "^0.2.0",
     "vue": "^2.6.11",

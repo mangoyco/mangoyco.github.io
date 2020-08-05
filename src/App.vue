@@ -18,6 +18,10 @@ export default {
     }
   },
   created(){
+    this.$store.dispatch('getW',localAddress)
+    setTimeout(()=>{
+      console.log(this.$store)
+    },2000)
     this.setHbyRoute()
   },
   methods:{
