@@ -25,7 +25,7 @@ export default {
     getW(){
       let localAddress = window.localAddress
       this.$store.dispatch('getW',localAddress).then(()=>{
-        console.log(this.$store)
+        console.log(this.$store.getters.getWtype)
       })
     },
     setHbyRoute(){

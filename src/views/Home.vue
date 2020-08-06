@@ -20,10 +20,13 @@
                 fill="currentColor" class="octo-body"></path>
             </svg>
           </a>
+          <div style="width:30px;height:30px;">
+            <Wsvg/>
+          </div>
         </div>
 
         <div class="links">
-
+          <!-- <Wsvg/> -->
         </div>
 
       </div>
@@ -37,11 +40,12 @@
 // let hh = require('@/utils/export.js')
 // import * as Api from '@/api/jsonplace'
 import Card from '@/components/card'
+import Wsvg from '@/components/svg/wsvg'
 import { cardList }  from '../utils/dataShort'
 
 export default {
   name: 'HelloWorld',
-  components:{Card},
+  components:{Card,Wsvg},
   data () {
     return {
       cards:cardList,
