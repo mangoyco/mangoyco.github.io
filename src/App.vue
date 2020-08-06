@@ -18,13 +18,16 @@ export default {
     }
   },
   created(){
-    this.$store.dispatch('getW',localAddress)
-    setTimeout(()=>{
-      console.log(this.$store)
-    },2000)
+    this.getW()
     this.setHbyRoute()
   },
   methods:{
+    getW(){
+      let localAddress = window.localAddress
+      this.$store.dispatch('getW',localAddress).then(()=>{
+        console.log(this.$store)
+      })
+    },
     setHbyRoute(){
       this.$router.beforeEach((to, from, next) => {
         if(to.name === 'Blog'){

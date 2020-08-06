@@ -18,10 +18,12 @@ export default new Vuex.Store({
   },
   actions: {
     getW({ commit }, q) {
-      let c = encodeURI(q.city)
-      Vue.prototype.$axios.get(`//wthrcdn.etouch.cn/weather_mini?city=${c}`).then(res => {
-        console.log(res.data)
-        commit('setW', res.data.data)
+      return new Promise(res => {
+        let c = encodeURI(q.city)
+        Vue.prototype.$axios.get(`//wthrcdn.etouch.cn/weather_mini?city=${c}`).then(res => {
+          commit('setW', res.data.data)
+          res()
+        })
       })
     }
   },
