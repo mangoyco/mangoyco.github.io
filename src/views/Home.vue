@@ -24,7 +24,7 @@
             <img src="../assets/bg-sea3.jpg" alt="">
             <div class="top_text">
               <p>Love Yourself</p>
-              <p>努力不一定有钱，但不努力一定没事干</p>
+              <p :title="'努力不一定有钱，\n但不努力一定没事干'">努力不一定有钱，但不努力一定没事干</p>
             </div>
           </div>
           <div style="width:30px;height:30px;">
@@ -116,10 +116,12 @@ export default {
           height: 48px;
           border-radius: 50%;
           display: inline-block;
-          vertical-align: bottom;
+          vertical-align: top;
         }
         .top_text{
+          box-sizing: border-box;
           height: 48px;
+          width: calc(100% - 50px);
           padding-left: 8px;
           line-height: 24px;
           font-size: 14px;
