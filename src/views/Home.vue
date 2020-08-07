@@ -20,6 +20,13 @@
                 fill="currentColor" class="octo-body"></path>
             </svg>
           </a>
+          <div class="top">
+            <img src="../assets/bg-sea3.jpg" alt="">
+            <div class="top_text">
+              <p>Love Yourself</p>
+              <p>努力不一定有钱，但不努力一定没事干</p>
+            </div>
+          </div>
           <div style="width:30px;height:30px;">
             <Wsvg :type="wType"/>
           </div>
@@ -64,14 +71,8 @@ export default {
       window.scrollTo(0,localStorage.getItem('homeTop'))
       // document.documentElement.scrollTop = localStorage.getItem('homeTop')
     })
-    // console.log(process.env)
     // hh.name = 'chan'
-    // console.log(hh)
-    // hh.test()
     // Api.testApi().then(res=>{
-    //   console.log(res)
-    // })
-    // axios.get('https://jsonplaceholder.typicode.com/posts/1').then(res=>{
     //   console.log(res)
     // })
   },
@@ -79,10 +80,8 @@ export default {
     getW(){
       let localAddress = window.localAddress
       this.$store.dispatch('getW',localAddress).then(()=>{
-        // console.log(this.$store)
         this.wType = this.$store.getters.getWtype
         this.warmrange = this.$store.getters.warmrange
-        console.log(this.warmrange)
       })
     },
   },
@@ -111,6 +110,34 @@ export default {
       position: sticky;
       top: 20px;
       background-color: #fff;
+      .top{
+        img{
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: bottom;
+        }
+        .top_text{
+          height: 48px;
+          padding-left: 8px;
+          line-height: 24px;
+          font-size: 14px;
+          display: inline-block;
+          p:first-child{
+            color: #212121;
+          }
+          p:last-child{
+            font-size: 12px;
+            color: #999;
+          }
+        }
+        width: 100%;
+        height: 30%;
+        box-sizing: border-box;
+        padding: 20px 15px 0;
+        background-color: #eeeeee;
+      }
     }
     .links{
       border: 1px solid #eeeeee;
