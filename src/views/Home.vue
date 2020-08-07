@@ -21,16 +21,14 @@
             </svg>
           </a>
           <div style="width:30px;height:30px;">
-            <Wsvg/>
+            <Wsvg :type="wType"/>
           </div>
         </div>
 
-        <div class="links">
-          <!-- <Wsvg/> -->
-        </div>
+        <!-- <div class="links">
+        </div> -->
 
       </div>
-      
 
     </div>
   </div>
@@ -49,7 +47,11 @@ export default {
   data () {
     return {
       cards:cardList,
+      wType:undefined
     }
+  },
+  created(){
+    this.getW()
   },
   mounted(){
     this.$nextTick(()=>{
@@ -66,6 +68,17 @@ export default {
     // axios.get('https://jsonplaceholder.typicode.com/posts/1').then(res=>{
     //   console.log(res)
     // })
+  },
+  methods:{
+    getW(){
+      let localAddress = window.localAddress
+      this.$store.dispatch('getW',localAddress).then(()=>{
+        // console.log(this.$store)
+        // console.log(this.$store.getters.getWtype)
+        console.log(unescape(this.$store.getters.getWtype))
+        this.wType = this.$store.getters.getWtype
+      })
+    },
   },
   beforeRouteLeave(to, from, next){
     let top = document.documentElement.scrollTop || document.body.scrollTop;

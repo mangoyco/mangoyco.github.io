@@ -28,6 +28,8 @@ const cardList = [
     },
 ]
 
+
+
 export {
     cardList
 }

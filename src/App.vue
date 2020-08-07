@@ -18,16 +18,9 @@ export default {
     }
   },
   created(){
-    this.getW()
     this.setHbyRoute()
   },
   methods:{
-    getW(){
-      let localAddress = window.localAddress
-      this.$store.dispatch('getW',localAddress).then(()=>{
-        console.log(this.$store.getters.getWtype)
-      })
-    },
     setHbyRoute(){
       this.$router.beforeEach((to, from, next) => {
         if(to.name === 'Blog'){

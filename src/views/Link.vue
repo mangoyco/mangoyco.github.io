@@ -3,7 +3,7 @@
       <div style="height:500px;">
         <div v-html="content"></div>
         <p>dsadsad</p>
-      </div>  
+      </div>
       this is Link
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
       return {
         content:'<h1>666</h1>'
       }
-    }
+    },
 }
 </script>
 
