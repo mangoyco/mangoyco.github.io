@@ -27,4 +27,6 @@ todoList:
 
 #weather
 #toolbar
+#author info
+#fist articl
 

@@ -23,6 +23,9 @@
           <div style="width:30px;height:30px;">
             <Wsvg :type="wType"/>
           </div>
+          <div>
+            {{warmrange}}
+          </div>
         </div>
 
         <!-- <div class="links">
@@ -47,11 +50,14 @@ export default {
   data () {
     return {
       cards:cardList,
-      wType:undefined
+      wType:undefined,
+      warmrange:undefined,
     }
   },
   created(){
-    this.getW()
+    this.$store.dispatch('setS').then(()=>{
+      this.getW()
+    })
   },
   mounted(){
     this.$nextTick(()=>{
@@ -74,9 +80,9 @@ export default {
       let localAddress = window.localAddress
       this.$store.dispatch('getW',localAddress).then(()=>{
         // console.log(this.$store)
-        // console.log(this.$store.getters.getWtype)
-        console.log(unescape(this.$store.getters.getWtype))
         this.wType = this.$store.getters.getWtype
+        this.warmrange = this.$store.getters.warmrange
+        console.log(this.warmrange)
       })
     },
   },

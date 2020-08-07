@@ -11,7 +11,11 @@ export default new Vuex.Store({
   state: {
     weather:undefined
   },
-  getters:{
+  getters: {
+    warmrange(state) {
+      let t = state.weather.forecast[0]
+      return `${t.low.substr(3).replace('℃','')}~${t.high.substr(3)}`
+    },
     getWtype(state) {
       const arr = ['%u9634', '%u96F7', '%u96E8', '%u6674', '%u4E91', '%u98CE', '%u96EA', ]
       let t = state.weather.forecast[0].type
@@ -32,6 +36,16 @@ export default new Vuex.Store({
           commit('setW', res.data.data)
           reslove()
         })
+      })
+    },
+    setS() {
+      return new Promise(res => {
+        var w = document.createElement('script')
+        w.src = '//ip.ws.126.net/ipquery?ie=utf-8'
+        document.head.append(w)
+        w.onload = ()=> {
+          res()
+        }
       })
     }
   },
