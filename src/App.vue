@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('./assets/style.css');
 // .fade-enter-active, .fade-leave-avtive {
 //     transition: opacity 1s
 // }

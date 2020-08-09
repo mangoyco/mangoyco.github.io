@@ -3,9 +3,10 @@
       <!-- <div style="width:auto;background-color:red;height:200px">
 
       </div> -->
-      <div id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
+      <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
       </div>
+      <img src="/static/img/loading.svg" alt="" srcset="">
   </div>
 </template>
 
@@ -15,11 +16,15 @@
 export default {
     data(){
         return {
-            doms:''
+            doms:'',
+            loading:false,
         }
     },
     created(){
         this.appendMarked()
+        window.debug = ()=>{
+            this.loading = true
+        }
     },
     mounted(){
         // for scroll

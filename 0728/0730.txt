@@ -30,3 +30,6 @@ todoList:
 #author info
 #fist articl
 
+
+  background-attachment: fixed; 发现这么个问题，加上这个属性竟然会影响滚动！！加上后滚动鼠标可以打断scrolltop()的滚动，不晓得为啥。。。
+
