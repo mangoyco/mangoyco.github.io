@@ -8,7 +8,7 @@
       <div class="right_warp">
         <div class="author">
           <a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
-            <svg width="80" height="80"
+            <svg width="60" height="60"
               viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
               aria-hidden="true">
               <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -111,6 +111,7 @@ export default {
       top: 20px;
       background-color: #fff;
       .top{
+        background: #fff;
         img{
           width: 48px;
           height: 48px;
@@ -138,7 +139,8 @@ export default {
         height: 30%;
         box-sizing: border-box;
         padding: 20px 15px 0;
-        background-color: #eeeeee;
+        border-bottom: 1px solid #dbdbdb;
+        // background-color: #eeeeee;
       }
     }
     .links{

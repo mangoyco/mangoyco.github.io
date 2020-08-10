@@ -6,6 +6,14 @@
       <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
       </div>
+      <div class="direct">
+          <h3>123</h3>
+          <ul>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+          </ul>
+      </div>
   </div>
 </template>
 
@@ -20,6 +28,7 @@ export default {
         }
     },
     created(){
+        // this.loading = true
         this.appendMarked()
         window.debug = ()=>{
             this.loading = !this.loading
@@ -61,13 +70,35 @@ export default {
 <style lang="scss" scoped>
 @import url('/static/source/md.css');
 .blog_router{
-    padding: 35px 20% 50px;
+    padding: 30px 20% 50px;
     .blog{
         width: 100%;
         min-height: 200px;
-        border-radius: 3%;
-        padding: 0 30px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        padding: 20px 30px;
         background-color: #fff;
+        box-sizing: border-box;
+    }
+    .direct{
+        position: fixed;
+        right: 0;
+        top: 80px;
+        min-height: 100px;
+        width: 19%;
+        // border: 1px solid black;
+        ul{
+            li{
+                position: relative;
+            }
+            li::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                border-left: 1px solid #dbdbdb;
+            }
+        }
     }
 }
 </style>
