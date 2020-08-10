@@ -5,6 +5,8 @@ var creatMask = (function () {
     var mask;
     return function (el, bol) {
         if (bol) {
+            console.log(window.getComputedStyle(el).position)
+            window.getComputedStyle(el).position === 'static' ? el.classList.add('mask_parent') : ''
             if (!mask) {
                 mask = document.createElement('div')
                 mask.classList.add('load_mask')
@@ -20,7 +22,6 @@ var creatMask = (function () {
                     </g>
                 </svg>`
             }
-            window.getComputedStyle(el).position === 'static' ? el.classList.add('mask_parent') : ''
             el.appendChild(mask)
             el.appended = true
         } else {
@@ -42,9 +43,9 @@ Vue.directive('loading', {
         creatMask(el, binding.value)
     },
     update(el, binding) {
-        Vue.prototype.$nextTick(() => {
+        // Vue.prototype.$nextTick(() => {
             creatMask(el, binding.value)
-        })
+        // })
         // creatMask(el, binding.value)
     }
 })

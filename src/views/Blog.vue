@@ -61,10 +61,10 @@ export default {
 <style lang="scss" scoped>
 @import url('/static/source/md.css');
 .blog_router{
-    padding: 35px 230px 50px;
+    padding: 35px 20% 50px;
     .blog{
+        width: 100%;
         min-height: 200px;
-        height: auto;
         border-radius: 3%;
         padding: 0 30px;
         background-color: #fff;
