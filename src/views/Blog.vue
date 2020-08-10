@@ -6,7 +6,6 @@
       <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
       </div>
-      <img src="/static/img/loading.svg" alt="" srcset="">
   </div>
 </template>
 
@@ -23,15 +22,16 @@ export default {
     created(){
         this.appendMarked()
         window.debug = ()=>{
-            this.loading = true
+            this.loading = !this.loading
         }
     },
     mounted(){
         // for scroll
-        this.$route.meta.y = window.innerHeight - 60
+        // this.$route.meta.y = window.innerHeight - 60
     },
     methods:{
         appendMarked(){
+            this.loading = true
             if(!window.hasOwnProperty('marked')){
                 var script = document.createElement('script')
                 script.id = 'marked'
@@ -50,6 +50,7 @@ export default {
                 this.doms = window.marked(res.data)
                 this.$nextTick(()=>{
                     window.scrollTo(0,0)
+                    this.loading = false
                 })
             })
         }
@@ -62,6 +63,8 @@ export default {
 .blog_router{
     padding: 35px 230px 50px;
     .blog{
+        min-height: 200px;
+        height: auto;
         border-radius: 3%;
         padding: 0 30px;
         background-color: #fff;
