@@ -28,6 +28,7 @@ todoList:
 #weather √
 #loading √   // 08.10 bug可能是执行顺序的原因
 #toolbar
+#v-lazy
 #author info
 #fist articl
 

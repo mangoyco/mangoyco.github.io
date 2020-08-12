@@ -20,9 +20,16 @@ export default {
   beforeCreate(){
   },
   created(){
+    this.initH()
     this.setHbyRoute()
   },
   methods:{
+    initH(){
+      if(!this.$route.name){
+        console.log(222)
+        this.headerH = '60px'
+      }
+    },
     setHbyRoute(){
       this.$router.beforeEach((to, from, next) => {
         if(to.name === 'Blog'){
