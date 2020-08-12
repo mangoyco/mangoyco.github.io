@@ -133,51 +133,21 @@ svg {
   animation: sunny 15s linear infinite;
 }
 
-@-webkit-keyframes sunny{
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-      }
-    
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
+@keyframes sunny{
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 /* Thunder Bolt Animation */
 .thunder-cloud .bolt {
   -webkit-animation: flash 2s infinite;
           animation: flash 2s infinite;
-}
-
-@-webkit-keyframes flash {
-  0% {
-    -webkit-transform: translateY(-25px) translateX(25px) scaleY(0.95);
-            transform: translateY(-25px) translateX(25px) scaleY(0.95);
-    opacity: 0;
-  }
-  5%, 25% {
-    opacity: 1;
-  }
-  15%, 20% {
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(8px) translateX(-10px);
-            transform: translateY(8px) translateX(-10px);
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: translateY(8px) translateX(-10px);
-            transform: translateY(8px) translateX(-10px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(-25px) translateX(25px) scaleY(0.95);
-            transform: translateY(-25px) translateX(25px) scaleY(0.95);
-    opacity: 0;
-  }
 }
 
 @keyframes flash {
@@ -231,32 +201,6 @@ svg {
 .rain-cloud .raindrop-three {
   -webkit-animation: falling-drop-one 1.80s ease 0.5s infinite;
           animation: falling-drop-one 1.80s ease 0.5s infinite;
-}
-
-@-webkit-keyframes falling-drop-one {
-  0% {
-    -webkit-transform: translateY(-35px);
-            transform: translateY(-35px);
-    opacity: 0;
-  }
-  10% {
-    -webkit-transform: translateY(-15px);
-            transform: translateY(-15px);
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(-35px);
-            transform: translateY(-35px);
-    opacity: 0;
-  }
 }
 
 @keyframes falling-drop-one {
@@ -350,19 +294,6 @@ svg {
           transform-origin: center left;
 }
 
-@-webkit-keyframes sun-grow {
-  0%, 90%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  15%, 80% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @keyframes sun-grow {
   0%, 90%, 100% {
     -webkit-transform: scale(0.5);
@@ -370,19 +301,6 @@ svg {
     opacity: 0;
   }
   15%, 80% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes ray-show-one {
-  0%, 15%, 80%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  20%, 70% {
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 1;
@@ -402,19 +320,6 @@ svg {
   }
 }
 
-@-webkit-keyframes ray-show-two {
-  0%, 20%, 80%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  25%, 70% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @keyframes ray-show-two {
   0%, 20%, 80%, 100% {
     -webkit-transform: scale(0.5);
@@ -422,19 +327,6 @@ svg {
     opacity: 0;
   }
   25%, 70% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes ray-show-three {
-  0%, 25%, 80%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  30%, 70% {
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 1;
@@ -454,19 +346,6 @@ svg {
   }
 }
 
-@-webkit-keyframes ray-show-four {
-  0%, 30%, 80%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  35%, 70% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @keyframes ray-show-four {
   0%, 30%, 80%, 100% {
     -webkit-transform: scale(0.5);
@@ -474,19 +353,6 @@ svg {
     opacity: 0;
   }
   35%, 70% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes ray-show-five {
-  0%, 35%, 80%, 100% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0;
-  }
-  40%, 70% {
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 1;
@@ -522,17 +388,6 @@ svg {
           animation: wind-slide-one 4s infinite;
 }
 
-@-webkit-keyframes bob {
-  0%, 100% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-}
-
 @keyframes bob {
   0%, 100% {
     -webkit-transform: translateY(10px);
@@ -544,17 +399,6 @@ svg {
   }
 }
 
-@-webkit-keyframes cloud-push {
-  0%, 80%, 100% {
-    -webkit-transform: translateX(-120px) scale(1.2);
-            transform: translateX(-120px) scale(1.2);
-  }
-  10%, 60% {
-    -webkit-transform: translateX(0) scale(1);
-            transform: translateX(0) scale(1);
-  }
-}
-
 @keyframes cloud-push {
   0%, 80%, 100% {
     -webkit-transform: translateX(-120px) scale(1.2);
@@ -563,19 +407,6 @@ svg {
   10%, 60% {
     -webkit-transform: translateX(0) scale(1);
             transform: translateX(0) scale(1);
-  }
-}
-
-@-webkit-keyframes wind-slide-one {
-  0%, 70%, 100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    opacity: 0;
-  }
-  10%, 60% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    opacity: 1;
   }
 }
 

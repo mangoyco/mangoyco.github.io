@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './directive/directive'
+import './directive/vloading'
 // import axios from 'axios'
 
 Vue.config.productionTip = false
