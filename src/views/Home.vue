@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" style="position:relative">
     <div class="downcontainer">
 
       <div style="padding-bottom:50px">
@@ -34,7 +34,6 @@
             {{warmrange}}
           </div>
         </div>
-
         <!-- <div class="links">
         </div> -->
 

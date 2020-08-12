@@ -15,6 +15,7 @@ export default {
   data(){
     return{
       headerH:null,
+      fullHearer:'Home,'
     }
   },
   beforeCreate(){
@@ -23,10 +24,11 @@ export default {
     this.initH()
     this.setHbyRoute()
   },
+  mounted(){
+  },
   methods:{
     initH(){
-      if(!this.$route.name){
-        console.log(222)
+      if(!(this.fullHearer.includes(this.$route.name))){
         this.headerH = '60px'
       }
     },

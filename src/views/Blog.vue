@@ -1,19 +1,20 @@
 <template>
   <div class="blog_router" >
-      <!-- <div style="width:auto;background-color:red;height:200px">
+      <div v-show="directShow" class="direct">
+          <div v-show="div">
 
-      </div> -->
-      <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
-
-      </div>
-      <div class="direct">
           <h3>123</h3>
           <ul>
               <li>1</li>
               <li>1</li>
               <li>1</li>
           </ul>
+          </div>
       </div>
+      <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
+
+      </div>
+      
   </div>
 </template>
 
@@ -25,6 +26,8 @@ export default {
         return {
             doms:'',
             loading:false,
+            directShow:false,
+            div:false
         }
     },
     created(){
@@ -60,6 +63,13 @@ export default {
                 this.$nextTick(()=>{
                     window.scrollTo(0,0)
                     this.loading = false
+                    this.directShow = true
+                    // this.$nextTick(()=>{
+                    //     this.div = true
+                    // })
+                    setTimeout(()=>{
+                        this.div = true
+                    },500)
                 })
             })
         }
@@ -81,6 +91,7 @@ export default {
         box-sizing: border-box;
     }
     .direct{
+        transition: all .5s;
         position: fixed;
         right: 0;
         top: 80px;
