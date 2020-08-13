@@ -1,20 +1,17 @@
 <template>
   <div class="blog_router" >
-      <div v-show="directShow" class="direct">
-          <div v-show="div">
+      
+      <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
 
+      </div>
+      <div class="direct">
           <h3>123</h3>
           <ul>
               <li>1</li>
               <li>1</li>
               <li>1</li>
           </ul>
-          </div>
       </div>
-      <div v-loading="loading" id="blog_warp" ref="blog" class="blog typo markdown-body" v-html="doms">
-
-      </div>
-      
   </div>
 </template>
 
@@ -26,8 +23,6 @@ export default {
         return {
             doms:'',
             loading:false,
-            directShow:false,
-            div:false
         }
     },
     created(){
@@ -63,13 +58,6 @@ export default {
                 this.$nextTick(()=>{
                     window.scrollTo(0,0)
                     this.loading = false
-                    this.directShow = true
-                    // this.$nextTick(()=>{
-                    //     this.div = true
-                    // })
-                    setTimeout(()=>{
-                        this.div = true
-                    },500)
                 })
             })
         }
@@ -80,8 +68,14 @@ export default {
 <style lang="scss" scoped>
 @import url('/static/source/md.css');
 .blog_router{
-    padding: 30px 20% 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 0 50px;
     .blog{
+        grid-column-start: 2;
         width: 100%;
         min-height: 200px;
         border-radius: 8px;
@@ -91,16 +85,17 @@ export default {
         box-sizing: border-box;
     }
     .direct{
-        transition: all .5s;
         position: fixed;
+        opacity: 0;
+        animation: opcity 0.5s ease 1s 1;
+        animation-fill-mode: forwards;
         right: 0;
-        top: 80px;
+        top: 90px;
         min-height: 100px;
-        width: 19%;
-        // border: 1px solid black;
+        width: 20%;
         ul{
             li{
-                position: relative;
+                // position: relative;
             }
             li::before{
                 content: "";
@@ -110,6 +105,15 @@ export default {
                 border-left: 1px solid #dbdbdb;
             }
         }
+    }
+}
+
+@keyframes opcity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 </style>
