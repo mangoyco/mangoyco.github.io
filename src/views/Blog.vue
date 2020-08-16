@@ -5,11 +5,9 @@
 
       </div>
       <div class="direct">
-          <h3>123</h3>
+          <h3>{{mdTitle}}</h3>
           <ul>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
+              <li :class="{active:aIndex === index}" :title="h.innerText" v-for="(h,index) in catalogs" :key="index">{{h.innerText}}</li>
           </ul>
       </div>
   </div>
@@ -23,6 +21,9 @@ export default {
         return {
             doms:'',
             loading:false,
+            mdTitle:null,
+            catalogs:[],
+            aIndex:0,
         }
     },
     created(){
@@ -33,6 +34,9 @@ export default {
         }
     },
     mounted(){
+        window.debug = ()=>{
+            console.log(this.catalogs)
+        }
         // for scroll
         // this.$route.meta.y = window.innerHeight - 60
     },
@@ -58,10 +62,24 @@ export default {
                 this.$nextTick(()=>{
                     window.scrollTo(0,0)
                     this.loading = false
+                    this.initCatalog()
                 })
             })
+        },
+        initCatalog(){
+            this.mdTitle = document.getElementsByTagName('h1')[0].innerText
+            this.catalogs = Array.from(this.$refs.blog.querySelectorAll('h2,h3'))
+            document.addEventListener('scroll',this.blogScroll)
+        },
+        blogScroll(e){
+            let r = this.catalogs.findIndex(e=>{
+                return e.getBoundingClientRect().top > 24
+            })
+            let active = r === 0 ? 0 : (r - 1)
+            this.aIndex = active
+            console.log(r)
         }
-    }
+    },
 }
 </script>
 
@@ -90,18 +108,54 @@ export default {
         animation: opcity 0.5s ease 1s 1;
         animation-fill-mode: forwards;
         right: 0;
-        top: 90px;
+        top: 80px;
         min-height: 100px;
         width: 20%;
         ul{
+            li.active{
+                color: #1976d2;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top:calc(50% - 4px);
+                    background-color: #1976d2 !important;
+                    left: -3px;
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                }
+            }
             li{
-                // position: relative;
+                font-size: 0.5rem;
+                position: relative;
+                padding: 4px 6px;
+                box-sizing: border-box;
+                &:first-child::before{
+                    top:45%;
+                }
+                &:last-child::before{
+                    bottom: 55%;
+                }
+                &:hover{
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top:calc(50% - 4px);
+                        background-color: #1976d2;
+                        left: -3px;
+                        width: 7px;
+                        height: 7px;
+                        background-color: #dbdbdb;
+                        border-radius: 50%;
+                    }
+                }
             }
             li::before{
                 content: "";
                 position: absolute;
                 top: 0;
                 bottom: 0;
+                left: 0;
                 border-left: 1px solid #dbdbdb;
             }
         }
