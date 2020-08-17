@@ -7,7 +7,7 @@
       <div class="direct">
           <h3>{{mdTitle}}</h3>
           <ul>
-              <li :class="{active:aIndex === index}" :title="h.innerText" v-for="(h,index) in catalogs" :key="index">{{h.innerText}}</li>
+              <li @click="articalHash(h)" :class="{active:aIndex === index}" :title="h.innerText" v-for="(h,index) in catalogs" :key="index">{{h.innerText}}</li>
           </ul>
       </div>
   </div>
@@ -78,6 +78,14 @@ export default {
             let active = r === 0 ? 0 : (r - 1)
             this.aIndex = active
             console.log(r)
+        },
+        articalHash(h){
+            if(h.scrollIntoView){
+                h.scrollIntoView({
+                    behavior: "smooth", 
+                    block: "start"
+                })
+            }
         }
     },
 }
