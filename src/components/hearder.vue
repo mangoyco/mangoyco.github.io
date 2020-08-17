@@ -85,6 +85,7 @@ export default {
       },3000)
     },
     scroll(e){
+      if(this.headerH !== null)return
       let scrollTop = document.documentElement.scrollTop
       if(scrollTop - this.lastTop > 0){
         // 向下滚动

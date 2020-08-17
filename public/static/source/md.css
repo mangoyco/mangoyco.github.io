@@ -985,3 +985,10 @@
   margin: 0 .2em .25em -1.6em;
   vertical-align: middle
 }
+
+
+/* myself */
+.markdown-body h2, .markdown-body h3{
+  margin-top: 0!important;
+  padding-top: 24px!important;
+}

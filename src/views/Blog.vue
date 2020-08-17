@@ -77,7 +77,7 @@ export default {
             })
             let active = r === 0 ? 0 : (r - 1)
             this.aIndex = active
-            console.log(r)
+            // console.log(r)
         },
         articalHash(h){
             if(h.scrollIntoView){
@@ -95,7 +95,7 @@ export default {
 @import url('/static/source/md.css');
 .blog_router{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2.2fr 1fr;
     gap: 50px;
     width: 100%;
     box-sizing: border-box;
@@ -136,7 +136,7 @@ export default {
             li{
                 font-size: 0.5rem;
                 position: relative;
-                padding: 4px 6px;
+                padding: 4px 8px;
                 box-sizing: border-box;
                 &:first-child::before{
                     top:45%;
@@ -145,6 +145,7 @@ export default {
                     bottom: 55%;
                 }
                 &:hover{
+                    color: #1976d2;
                     &::after{
                         content: '';
                         position: absolute;
