@@ -1,7 +1,7 @@
 const cardList = [
     {
         imgurl:'https://ainyi.com/krryblog/upload/2019/05/09/cd05bcc9-367e-4195-8b0e-84f6ede337b8.jpg',
-        title:'Hi everyone',
+        title:'Thx for coming',
         range:'置顶,introduce',
         url:'2020/introduce',
         fileName:'test.md',

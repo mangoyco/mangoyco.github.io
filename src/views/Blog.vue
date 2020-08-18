@@ -67,7 +67,8 @@ export default {
             })
         },
         initCatalog(){
-            this.mdTitle = document.getElementsByTagName('h1')[0].innerText
+            let d = document.getElementsByTagName('h1')
+            this.mdTitle = (d[0] && d[0].innerText) || ''
             this.catalogs = Array.from(this.$refs.blog.querySelectorAll('h2,h3'))
             document.addEventListener('scroll',this.blogScroll)
         },

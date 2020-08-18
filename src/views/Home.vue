@@ -7,9 +7,9 @@
       </div>
       <div class="right_warp">
         <div class="author">
-          <a href="https://your-url" class="github-corner" aria-label="View source on GitHub">
+          <a href="https://github.com/mangoyco" class="github-corner" aria-label="View source on GitHub">
             <svg width="60" height="60"
-              viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+              viewBox="0 0 250 250" style="fill:#49b1f5; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
               aria-hidden="true">
               <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
               <path
@@ -27,12 +27,18 @@
               <p :title="'努力不一定有钱，\n但不努力一定没事干'">努力不一定有钱，但不努力一定没事干</p>
             </div>
           </div>
-          <div style="width:30px;height:30px;">
-            <Wsvg :type="wType"/>
+          <div class="rest">
+            <div style="width:30px;height:30px;">
+              <Wsvg :type="wType"/>
+            </div>
+            <div class="warmrange">
+              {{warmrange}}
+            </div>
+            
+            
           </div>
-          <div>
-            {{warmrange}}
-          </div>
+          
+          
         </div>
         <!-- <div class="links">
         </div> -->
@@ -152,5 +158,20 @@ export default {
     }
   }
   
+}
+.rest{
+  position: absolute;
+  top:30%;
+  bottom: 0;
+  width: 100%;
+  div{
+    display: inline-block;
+    float: right;
+  }
+  .warmrange{
+    vertical-align: top;
+    height: 30px;
+    line-height: 33px;
+  }
 }
 </style>
