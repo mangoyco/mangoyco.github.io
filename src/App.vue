@@ -4,14 +4,16 @@
     <transition name="slide-left" mode="out-in">
       <router-view class="_routerView"/>
     </transition>
+    <BackTop/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/hearder'
+import BackTop from '@/components/toTop'
 
 export default {
-  components:{Header},
+  components:{Header,BackTop},
   data(){
     return{
       headerH:null,
