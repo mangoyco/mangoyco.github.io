@@ -29,13 +29,17 @@
           </div>
           <div class="rest">
             <div class="row tips">
-              <div class="flex-1" style="background-color:red;height:80px">github</div>
-              <div class="flex-1" style="background-color:blue;height:80px">wechat</div>
-              <div class="flex-1" style="background-color:black;height:80px">weather</div>
+              <div class="flex-1 gh" >
+                <span class="iconfont">&#xe691;</span>
+              </div>
+              <div class="flex-1 wx" >
+                <span class="iconfont">&#xe623;</span>
+              </div>
+              <div class="flex-1 tq" >
+                  <Wsvg style="width:30px;height:30px;display:inline-block;padding-top:3px" :type="wType.type"/>
+              </div>
             </div>
-            <div style="width:30px;height:30px;">
-              <Wsvg :type="wType.type"/>
-            </div>
+            
             <div class="warmrange">
               {{warmrange}}
             </div>
@@ -164,7 +168,7 @@ export default {
 }
 .rest{
   background-image: url('/static/img/right_cartoon.jpg');
-  background-size: 20% 60%;
+  background-size: 25% 65%;
   background-repeat: no-repeat;
   background-position: calc(100% + 1px) bottom;
   position: absolute;
@@ -177,7 +181,17 @@ export default {
     line-height: 33px;
   }
   .tips{
-    
+    padding: 20px 10% 0;
+    .gh,.wx,.tq{
+      text-align: center;
+      height: 30px;
+      .iconfont{
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        color: #666;
+      }
+    }
   }
 }
 </style>

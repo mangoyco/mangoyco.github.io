@@ -125,7 +125,7 @@ svg {
   width: 100%;
   height: 100%;
   /* margin: 24px 0 0 40px; */
-  fill: #000;
+  fill: #666;
 }
 /* animation: name duration timing-function delay iteration-count direction; */
 
