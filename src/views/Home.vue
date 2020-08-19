@@ -28,17 +28,18 @@
             </div>
           </div>
           <div class="rest">
+            <div class="row">
+              <div class="flex-1" style="background-color:red;height:20px"></div>
+              <div class="flex-1" style="background-color:blue;height:20px"></div>
+              <div class="flex-1" style="background-color:black;height:20px"></div>
+            </div>
             <div style="width:30px;height:30px;">
-              <Wsvg :type="wType"/>
+              <Wsvg :type="wType.type"/>
             </div>
             <div class="warmrange">
               {{warmrange}}
             </div>
-            
-            
           </div>
-          
-          
         </div>
         <!-- <div class="links">
         </div> -->
@@ -62,7 +63,7 @@ export default {
   data () {
     return {
       cards:cardList,
-      wType:undefined,
+      wType:{},
       warmrange:undefined,
     }
   },
@@ -83,10 +84,12 @@ export default {
   },
   methods:{
     getW(){
+      let $s = this.$store
       let localAddress = window.localAddress
-      this.$store.dispatch('getW',localAddress).then(()=>{
-        this.wType = this.$store.getters.getWtype
-        this.warmrange = this.$store.getters.warmrange
+      $s.dispatch('getW',localAddress).then(()=>{
+        this.wType = $s.getters.getWtype
+        this.warmrange = $s.getters.warmrange
+        console.log($s.state.weather.forecast[0].type)
       })
     },
   },
@@ -160,14 +163,14 @@ export default {
   
 }
 .rest{
+  background-image: url('/static/img/right_cartoon.jpg');
+  background-size: 20% 60%;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 1px) bottom;
   position: absolute;
   top:30%;
   bottom: 0;
   width: 100%;
-  div{
-    display: inline-block;
-    float: right;
-  }
   .warmrange{
     vertical-align: top;
     height: 30px;

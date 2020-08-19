@@ -62,6 +62,7 @@ export default {
             color: #333;
         }
         .desc{
+            letter-spacing: 2px;
             text-indent: 2em;
             display: -webkit-box;
             -webkit-box-orient: vertical;

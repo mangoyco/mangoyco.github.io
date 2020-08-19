@@ -34,6 +34,8 @@ todoList:
 #author info
 #fist articl
 
+Try and fail, but don't fail to try.
+
 
   http://zhongrui.yunxuetang.cn/mit/myhomeworkexprience.htm?pid=34d4ff29-12f7-413a-aaa7-f7f12e31d0de
 

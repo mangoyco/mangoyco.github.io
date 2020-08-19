@@ -2,9 +2,7 @@
   <div>
       <div style="height:500px;">
         <div v-html="content"></div>
-        <p>dsadsad</p>
       </div>
-      this is Link
   </div>
 </template>
 
@@ -15,7 +13,7 @@ export default {
     components:{},
     data(){
       return {
-        content:'<h1>666</h1>'
+        content:'<h1>Watiing for coding</h1>'
       }
     },
 }

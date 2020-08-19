@@ -28,6 +28,8 @@ export default {
   },
   mounted(){
   },
+  destroyed(){
+  },
   methods:{
     initH(){
       if(!(this.fullHearer.includes(this.$route.name))){

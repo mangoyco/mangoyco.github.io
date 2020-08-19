@@ -20,7 +20,10 @@ export default new Vuex.Store({
       const arr = ['%u9634', '%u96F7', '%u96E8', '%u6674', '%u4E91', '%u98CE', '%u96EA', ]
       let t = state.weather.forecast[0].type
       let type = arr.find(e => t.indexOf(unescape(e)) !== -1)
-      return type
+      return {
+        type,
+        t
+      }
     }
   },
   mutations: {
