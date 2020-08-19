@@ -28,10 +28,10 @@
             </div>
           </div>
           <div class="rest">
-            <div class="row">
-              <div class="flex-1" style="background-color:red;height:20px"></div>
-              <div class="flex-1" style="background-color:blue;height:20px"></div>
-              <div class="flex-1" style="background-color:black;height:20px"></div>
+            <div class="row tips">
+              <div class="flex-1" style="background-color:red;height:80px">github</div>
+              <div class="flex-1" style="background-color:blue;height:80px">wechat</div>
+              <div class="flex-1" style="background-color:black;height:80px">weather</div>
             </div>
             <div style="width:30px;height:30px;">
               <Wsvg :type="wType.type"/>
@@ -175,6 +175,9 @@ export default {
     vertical-align: top;
     height: 30px;
     line-height: 33px;
+  }
+  .tips{
+    
   }
 }
 </style>
