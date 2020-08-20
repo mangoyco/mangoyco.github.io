@@ -23,6 +23,7 @@ export default {
   beforeCreate(){
   },
   created(){
+    this.loginfo()
     this.initH()
     this.setHbyRoute()
   },
@@ -45,6 +46,9 @@ export default {
         }
         next();
       });
+    },
+    loginfo(){
+      this.$store.dispatch('log')
     }
   }
 }

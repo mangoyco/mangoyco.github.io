@@ -99,7 +99,6 @@ export default {
       $s.dispatch('getW',localAddress).then(()=>{
         this.wType = $s.getters.getWtype
         this.warmrange = $s.getters.warmrange
-        console.log($s.state.weather.forecast[0])
       })
     },
   },

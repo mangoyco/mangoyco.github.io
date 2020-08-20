@@ -50,6 +50,16 @@ export default new Vuex.Store({
           res()
         }
       })
+    },
+    log({ commit },obj) {
+      Vue.prototype.$axios.post(process.env.VUE_APP_BASEAPI, obj, {
+        headers: {
+            "Content-type": "application/json;charset=utf-8",
+            'tok':'qwers'
+          }
+        }).then(res => {
+        console.log(res)
+      })
     }
   },
   modules: {
