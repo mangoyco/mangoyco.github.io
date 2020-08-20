@@ -120,6 +120,8 @@ export default {
 .svg_warp{
     width: 100%;
     height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
 }
 svg {
   width: 100%;

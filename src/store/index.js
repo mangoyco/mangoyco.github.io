@@ -14,7 +14,7 @@ export default new Vuex.Store({
   getters: {
     warmrange(state) {
       let t = state.weather.forecast[0]
-      return `${t.low.substr(3).replace('℃','')}~${t.high.substr(3)}`
+      return `${t.low.substr(3)}~${t.high.substr(3)}`.replace(/℃/g,'')
     },
     getWtype(state) {
       const arr = ['%u9634', '%u96F7', '%u96E8', '%u6674', '%u4E91', '%u98CE', '%u96EA', ]

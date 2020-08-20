@@ -2,7 +2,7 @@ const indexPageConfig = {
     entry: 'src/main.js',
     template: 'public/index.html',
     // filename: process.env.NODE_ENV === 'production' ? '../index.html' : '',
-    title: 'Life & Love Yourself',
+    title: 'Love Yourself',
     minify: {
       //移除空格
       collapseWhitespace: false,

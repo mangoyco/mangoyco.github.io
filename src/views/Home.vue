@@ -30,23 +30,22 @@
           <div class="rest">
             <div class="row tips">
               <div class="flex-1 gh" >
-                <span class="iconfont">&#xe691;</span>
+                <i class="iconfont">&#xe691;</i>
               </div>
               <div class="flex-1 wx" >
-                <span class="iconfont">&#xe623;</span>
+                <i class="iconfont">&#xe623;</i>
               </div>
-              <div class="flex-1 tq" >
-                  <Wsvg style="width:30px;height:30px;display:inline-block;padding-top:3px" :type="wType.type"/>
+              <div class="flex-1 tq">
+                  <Wsvg style="width:30px;height:30px;padding-top:3px;" :type="wType.type"/>
               </div>
             </div>
-            
-            <div class="warmrange">
-              {{warmrange}}
+            <div class="row tips_text">
+              <div class="flex-1">github</div>
+              <div class="flex-1">wechat</div>
+              <div class="flex-1">{{wText + warmrange}}&#176;</div>
             </div>
           </div>
         </div>
-        <!-- <div class="links">
-        </div> -->
 
       </div>
 
@@ -55,8 +54,6 @@
 </template>
 
 <script>
-// let hh = require('@/utils/export.js')
-// import * as Api from '@/api/jsonplace'
 import Card from '@/components/card'
 import Wsvg from '@/components/svg/wsvg'
 import { cardList }  from '../utils/dataShort'
@@ -64,6 +61,11 @@ import { cardList }  from '../utils/dataShort'
 export default {
   name: 'HelloWorld',
   components:{Card,Wsvg},
+  computed:{
+    wText(){
+      return this.wType.t ? this.wType.t : ''
+    }
+  },
   data () {
     return {
       cards:cardList,
@@ -81,10 +83,6 @@ export default {
       window.scrollTo(0,localStorage.getItem('homeTop'))
       // document.documentElement.scrollTop = localStorage.getItem('homeTop')
     })
-    // hh.name = 'chan'
-    // Api.testApi().then(res=>{
-    //   console.log(res)
-    // })
   },
   methods:{
     getW(){
@@ -93,7 +91,7 @@ export default {
       $s.dispatch('getW',localAddress).then(()=>{
         this.wType = $s.getters.getWtype
         this.warmrange = $s.getters.warmrange
-        console.log($s.state.weather.forecast[0].type)
+        console.log($s.state.weather.forecast[0])
       })
     },
   },
@@ -167,8 +165,9 @@ export default {
   
 }
 .rest{
-  background-image: url('/static/img/right_cartoon.jpg');
-  background-size: 25% 65%;
+  background-image: url('/static/img/cat.jpg');
+  // background-size: 25% 65%;
+  background-size: 60% 90%;
   background-repeat: no-repeat;
   background-position: calc(100% + 1px) bottom;
   position: absolute;
@@ -184,6 +183,12 @@ export default {
     padding: 20px 10% 0;
     .gh,.wx,.tq{
       text-align: center;
+      box-sizing: border-box;
+      font-size: 0;
+      span{
+        display: inline-block;
+      }
+      // vertical-align: baseline;
       height: 30px;
       .iconfont{
         width: 30px;
@@ -192,6 +197,16 @@ export default {
         color: #666;
       }
     }
+  }
+  .tips_text{
+    div{
+      height: 14px;
+    }
+    text-align: center;
+    padding: 5px 10% 0;
+    font-size: 8px;
+    color: #666;
+    line-height: 14px;
   }
 }
 </style>
