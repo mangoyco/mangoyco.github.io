@@ -30,7 +30,11 @@
           <div class="rest">
             <div class="row tips">
               <div class="flex-1 gh" >
-                <i class="iconfont">&#xe691;</i>
+                  <i class="iconfont">
+                    <a target="blank" href="https://github.com/mangoyco">
+                    &#xe691;
+                    </a>
+                  </i>
               </div>
               <div class="flex-1 wx" >
                 <i class="iconfont">&#xe623;</i>
@@ -40,7 +44,11 @@
               </div>
             </div>
             <div class="row tips_text">
-              <div class="flex-1">github</div>
+              <div class="flex-1">
+                <a target="blank" href="https://github.com/mangoyco">
+                  github
+                </a>
+              </div>
               <div class="flex-1">wechat</div>
               <div class="flex-1">{{wText + warmrange}}&#176;</div>
             </div>
@@ -167,9 +175,10 @@ export default {
 .rest{
   background-image: url('/static/img/cat.jpg');
   // background-size: 25% 65%;
-  background-size: 60% 90%;
+  // background-size: 60% 90%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
-  background-position: calc(100% + 1px) bottom;
+  background-position: right bottom;
   position: absolute;
   top:30%;
   bottom: 0;
@@ -188,7 +197,6 @@ export default {
       span{
         display: inline-block;
       }
-      // vertical-align: baseline;
       height: 30px;
       .iconfont{
         width: 30px;
@@ -207,6 +215,9 @@ export default {
     font-size: 8px;
     color: #666;
     line-height: 14px;
+  }
+  a{
+    color: currentColor;
   }
 }
 </style>

@@ -1,6 +1,9 @@
 ul{
   list-style: none;
 }
+a{
+  text-decoration: none;
+}
 .load_mask{
   position: absolute;
   top: 0;
