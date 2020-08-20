@@ -50,7 +50,7 @@
                 </a>
               </div>
               <div class="flex-1">wechat</div>
-              <div class="flex-1">{{wText + warmrange}}&#176;</div>
+              <div v-cloak class="flex-1">{{wText + warmrange}}</div>
             </div>
           </div>
         </div>
@@ -69,6 +69,11 @@ import { cardList }  from '../utils/dataShort'
 export default {
   name: 'HelloWorld',
   components:{Card,Wsvg},
+  filters:{
+    temp(val){
+      return val + '&#176;'
+    }
+  },
   computed:{
     wText(){
       return this.wType.t ? this.wType.t : ''
@@ -78,10 +83,11 @@ export default {
     return {
       cards:cardList,
       wType:{},
-      warmrange:undefined,
+      warmrange:'',
     }
   },
   created(){
+    console.log(process.env)
     this.$store.dispatch('setS').then(()=>{
       this.getW()
     })
@@ -98,7 +104,7 @@ export default {
       let localAddress = window.localAddress
       $s.dispatch('getW',localAddress).then(()=>{
         this.wType = $s.getters.getWtype
-        this.warmrange = $s.getters.warmrange
+        this.warmrange = $s.getters.warmrange + '°'
       })
     },
   },
