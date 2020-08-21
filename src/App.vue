@@ -28,6 +28,8 @@ export default {
     this.setHbyRoute()
   },
   mounted(){
+    var a = JSON.parse(process.env.VUE_APP_test)
+    console.log(a)
   },
   destroyed(){
   },

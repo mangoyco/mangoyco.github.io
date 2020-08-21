@@ -5,6 +5,7 @@ import store from './store'
 import './directive/vloading'
 import './assets/sass.scss'
 // import axios from 'axios'
+console.log(process.env)
 
 Vue.config.productionTip = false
 

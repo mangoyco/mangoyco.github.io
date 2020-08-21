@@ -29,14 +29,14 @@
           </div>
           <div class="rest">
             <div class="row tips">
-              <div class="flex-1 gh" >
+              <div class="flex-1 gh">
                   <i class="iconfont">
                     <a target="blank" href="https://github.com/mangoyco">
                     &#xe691;
                     </a>
                   </i>
               </div>
-              <div class="flex-1 wx" >
+              <div class="flex-1 wx">
                 <i class="iconfont">&#xe623;</i>
               </div>
               <div class="flex-1 tq">
@@ -87,7 +87,6 @@ export default {
     }
   },
   created(){
-    console.log(process.env)
     this.$store.dispatch('setS').then(()=>{
       this.getW()
     })
@@ -178,7 +177,7 @@ export default {
   
 }
 .rest{
-  background-image: url('/static/img/cat.jpg');
+  background-image: url('/static/img/elephant.jpg');
   // background-size: 25% 65%;
   // background-size: 60% 90%;
   background-size: auto 100%;
@@ -195,6 +194,9 @@ export default {
   }
   .tips{
     padding: 20px 10% 0;
+    .gh,.wx{
+      border-right: 1px solid #d9d9d9;
+    }
     .gh,.wx,.tq{
       text-align: center;
       box-sizing: border-box;
@@ -213,10 +215,14 @@ export default {
   }
   .tips_text{
     div{
+      padding-top: 5px;
       height: 14px;
+      &:nth-child(1),&:nth-child(2){
+        border-right: 1px solid #d9d9d9;
+      }
     }
     text-align: center;
-    padding: 5px 10% 0;
+    padding: 0px 10% 0;
     font-size: 8px;
     color: #666;
     line-height: 14px;
