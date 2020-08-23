@@ -15,6 +15,7 @@
 
                 </div>
                 <span class="date">
+                    <i class="iconfont">&#xe654;</i>
                     {{info.date}}
                 </span>
             </div>
@@ -87,12 +88,19 @@ export default {
             // background-color: red;
             position: absolute;
             display: flex;
-            bottom: 10px;
+            padding: 6px 0;
+            bottom: 0px;
             // justify-content: center;
             align-content: center;
             align-items: center;
             .date{
+                i{
+                    font-size: 14px;
+                    padding-top: 1px;
+                    vertical-align: text-bottom;
+                }
                 font-size: 12px;
+                line-height: 14px;
                 position: absolute;
                 right: 0;
                 padding-right: 20px;

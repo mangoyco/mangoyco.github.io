@@ -28,8 +28,6 @@ export default {
     this.setHbyRoute()
   },
   mounted(){
-    var a = JSON.parse(process.env.VUE_APP_test)
-    console.log(a)
   },
   destroyed(){
   },
@@ -50,7 +48,7 @@ export default {
       });
     },
     loginfo(){
-      this.$store.dispatch('log')
+      // this.$store.dispatch('log')
     }
   }
 }
@@ -143,12 +141,12 @@ body{
 
 @font-face {
   font-family: 'iconfont';  /* project id 1339475 */
-  src: url('//at.alicdn.com/t/font_1339475_yykt9gkonc.eot');
-  src: url('//at.alicdn.com/t/font_1339475_yykt9gkonc.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1339475_yykt9gkonc.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1339475_yykt9gkonc.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1339475_yykt9gkonc.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1339475_yykt9gkonc.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.eot');
+  src: url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1339475_9atmdk4jcti.svg#iconfont') format('svg');
 }
 
 .iconfont {
