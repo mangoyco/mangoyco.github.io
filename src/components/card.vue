@@ -1,7 +1,8 @@
 <template>
     <div @click="toBlog" class="cardwarp" :style="{width:size[0],height:size[1],}">
         <div class="img_warp">
-            <img :src="info.imgurl ? info.imgurl : 'http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg'" :alt="info.title">
+            <img v-if="info.imgurl" :src="info.imgurl" :alt="info.title">
+            <img v-else src="../assets/img/bg-sea3.jpg" alt="" srcset="">
         </div>
         <!-- <img :style="index%2==0 ? '': 'right:0;'" src="http://fp1.fghrsh.net/2019/07/19/c64e928e1c03f1eaaabea5a1d761cb09.jpg" alt=""> -->
         <div class="text_warp">
