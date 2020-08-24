@@ -41,4 +41,5 @@ Try and fail, but don't fail to try.
 
 
 https://www.heweather.com/
-
+https://search.heweather.net/find?key=0e6b2177d7f3421d8495e805eef57c73&group=cn&lang=zh&location=340000
+http://pv.sohu.com/cityjson?ie=utf-8
