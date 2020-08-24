@@ -40,51 +40,5 @@ todoList:
 Try and fail, but don't fail to try.
 
 
-  http://zhongrui.yunxuetang.cn/mit/myhomeworkexprience.htm?pid=34d4ff29-12f7-413a-aaa7-f7f12e31d0de
-
-  var listPage, videoPage;
-var manWin = window
-
-function initListPage(){
-  listPage = manWin.open(manWin.location.href)
-  setTimeout(() => {
-    var link = listPage.document.querySelector('span[data-localize=sys_btn_learnnow]').outerHTML
-    // var link = listPage.document.querySelector('span[data-localize=sys_btn_learnnow]').outerHTML.split('&')[1].slice(5)
-    // var link = listPage.document.querySelector('.text-link.hand').outerHTML.split('&')[1].slice(5)
-    initVideoPage(link)
-  },4000)
-}
-
-function createL(html) {
-  let arr = html.split('&').filter(e => e.includes('html'))[0].split('/')
-  var file = arr[arr.length - 1]
-  var pid = location.href.split('=')[1]
-  var res = `http: //zhongrui.yunxuetang.cn/kng/course/package/video/${file}?MasterID=${pid}&MasterType=MixedTraining&st=mit&objectId=${pid}`
-  return res
-}
-
-function initVideoPage(link) {
-  let l = createL(link)
-  console.log(l)
-  return
-  if (videoPage) {
-    videoPage.close()
-  }
-  videoPage = window.open(link)
-  setTimeout(() => {
-    videoPage.document.getElementById('btnStartStudy').click()
-    setTimeout(() => {
-      videoPage.document.getElementById('vjs_video_3_html5_api').setAttribute('mute', '')
-      videoPage.document.getElementById('vjs_video_3_html5_api').setAttribute('autoplay', 'autoplay')
-      manWin.console.log(videoPage.document.getElementById('vjs_video_3_html5_api'))
-      videoPage.document.getElementById('vjs_video_3_html5_api').onended = () => {
-        // listPage = manWin.open(manWin.location.href)
-        manWin.listPage.close()
-        initListPage()
-      }
-    },3000)
-  }, 4000)
-}
-
-initListPage()
+https://www.heweather.com/
 
