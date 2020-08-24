@@ -11,7 +11,7 @@
            </ul>
 
        </div>
-       <div class="centertitlt">Welcome</div>
+       <div v-show="!headerH" class="centertitlt">Welcome</div>
        <div v-show="!headerH" class="textedit">{{text}}|</div>
     </div>
 </template>
@@ -175,7 +175,7 @@ export default {
     // top: 28%;
     width: 95%;
     text-align: center;
-    font-size: 32px;
+    font-size: 42px;
     color: #eee;
     font-weight: 700;
     text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
