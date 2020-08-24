@@ -35,7 +35,7 @@ export default new Vuex.Store({
     getW({ commit }, q) {
       return new Promise(reslove => {
         let c = encodeURI(q.city)
-        Vue.prototype.$axios.get(`http://wthrcdn.etouch.cn/weather_mini?city=${c}`).then(res => {
+        Vue.prototype.$axios.get(`//wthrcdn.etouch.cn/weather_mini?city=${c}`).then(res => {
           commit('setW', res.data.data)
           reslove()
         })
