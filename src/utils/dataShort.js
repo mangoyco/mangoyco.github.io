@@ -5,7 +5,7 @@ const cardList = [
         range:'置顶,introduce',
         url:'2020/introduce',
         fileName:'test.md',
-        desc:'em...算是简单介绍几句吧，关于网站什么的，毕竟第一次搞这种东西哈哈',
+        desc: 'em...算是简单介绍几句吧，关于网站什么的，当然还有感谢来访😃',
         date:'2020-08-08',
     },
     {
@@ -17,15 +17,15 @@ const cardList = [
         desc:'测试的desc',
         date:'2020-01-01',
     },
-    {
-        imgurl:'/static/img/sea.jpg',
-        title:'this is title 这是测试标题',
-        range:'js,Vue',
-        url:'2020/0201',
-        fileName:'test.md',
-        desc:'测试的desc',
-        date:'2020-01-01'
-    },
+    // {
+    //     imgurl:'/static/img/sea.jpg',
+    //     title:'this is title 这是测试标题',
+    //     range:'js,Vue',
+    //     url:'2020/0201',
+    //     fileName:'test.md',
+    //     desc:'测试的desc',
+    //     date:'2020-01-01'
+    // },
     {
         imgurl:null,
         title:'this is title 这是测试标题',

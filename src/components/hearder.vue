@@ -1,7 +1,7 @@
 <template>
     <div class="headcontain" :style="{height:(headerH ? headerH : '100vh') }">
        <div :class="['white-nav',{'opc-nav':navBgc,'isfixed':navfixed,'fixtop':fixtop}]">
-         <!-- <span :style="navBgc ? 'color:#eee' : ''" class="nav-name">WangYC</span> -->
+         <span :style="navBgc ? 'color:#eee' : ''" class="nav-name">WangYC</span>
 
            <ul class="ullist">
              <router-link to="/" tag="li"><span class="iconfont">&#xe65a;</span>Home</router-link>
@@ -11,8 +11,8 @@
            </ul>
 
        </div>
-       <!-- <div class="centertitlt">Welcome</div> -->
-       <!-- <div v-show="!headerH" class="textedit">{{text}}|</div> -->
+       <div class="centertitlt">Welcome</div>
+       <div v-show="!headerH" class="textedit">{{text}}|</div>
     </div>
 </template>
 <script>
