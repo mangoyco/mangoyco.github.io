@@ -44,9 +44,10 @@ export default {
         appendMarked(){
             this.loading = true
             if(!window.hasOwnProperty('marked')){
+                let reg = /\/$/
                 var script = document.createElement('script')
                 script.id = 'marked'
-                script.src = '/static/source/marked.min.js'
+                script.src = process.env.BASE_URL.replace(reg,'') + '/static/source/marked.min.js'
                 script.onload = ()=>{
                     this.initMd()
                 }
@@ -94,7 +95,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('/static/source/md.css');
+@import '~@style/md.css';
+// @import url('/static/source/md.css');
+
 .blog_router{
     display: grid;
     grid-template-columns: 1fr 2.2fr 1fr;

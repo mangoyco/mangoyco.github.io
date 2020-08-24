@@ -1,8 +1,15 @@
+const path = require('path')
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 const indexPageConfig = {
     entry: 'src/main.js',
     template: 'public/index.html',
     // filename: process.env.NODE_ENV === 'production' ? '../index.html' : '',
     title: 'Love Yourself',
+    static: process.env.NODE_ENV === 'production' ? '/wyc' : '',
     minify: {
       //移除空格
       collapseWhitespace: false,
@@ -19,6 +26,18 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/wyc' : '/',
   outputDir: 'wyc',
   productionSourceMap: false,
+  // css: {
+  //   loaderOptions: {
+  //     scss: {
+  //       prependData: `@import "~@/assets/sasss.scss";`
+  //     }
+  //   }
+  // },
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set('@img', resolve('src/assets/img'))
+      .set('@style', resolve('src/assets/style'))
+  },
   configureWebpack: (config) => {
     config.mode = process.env.NODE_ENV
     // Object.assign(config, {

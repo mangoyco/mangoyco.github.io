@@ -21,7 +21,7 @@
             </svg>
           </a>
           <div class="top">
-            <img src="../assets/bg-sea3.jpg" alt="">
+            <img src="../assets/img/bg-sea3.jpg" alt="">
             <div class="top_text">
               <p>Love Yourself</p>
               <p :title="'努力不一定有钱，\n但不努力一定没事干'">努力不一定有钱，但不努力一定没事干</p>
@@ -50,7 +50,7 @@
                 </a>
               </div>
               <div class="flex-1">wechat</div>
-              <div v-cloak class="flex-1">{{wText + warmrange}}</div>
+              <div class="flex-1">{{wText + warmrange}}</div>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default {
   
 }
 .rest{
-  background-image: url('/static/img/elephant.jpg');
+  background-image: url('~@img/elephant.jpg');
   // background-size: 25% 65%;
   // background-size: 60% 90%;
   background-size: auto 100%;

@@ -55,7 +55,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('./assets/style.css');
+// $bc:'/asdsadsa';
+// @import url(var(--uuu));
+@import url('./assets/style/style.css');
 // .fade-enter-active, .fade-leave-avtive {
 //     transition: opacity 1s
 // }
