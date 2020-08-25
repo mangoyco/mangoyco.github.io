@@ -96,6 +96,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url('~@style/md.css');
+// @import '../assets/style/md.css';
 // @import url('/static/source/md.css');
 
 .blog_router{

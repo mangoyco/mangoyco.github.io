@@ -21,7 +21,7 @@
             </svg>
           </a>
           <div class="top">
-            <img src="../assets/img/bg-sea3.jpg" alt="">
+            <img src="../assets/img/avatar.jpg" alt="">
             <div class="top_text">
               <p>Love Yourself</p>
               <p :title="'努力不一定有钱，\n但不努力一定没事干'">努力不一定有钱，但不努力一定没事干</p>
@@ -217,8 +217,10 @@ export default {
     div{
       padding-top: 5px;
       height: 14px;
+      letter-spacing: 2px;
       &:nth-child(1),&:nth-child(2){
         border-right: 1px solid #d9d9d9;
+        letter-spacing: 1px;
       }
     }
     text-align: center;
