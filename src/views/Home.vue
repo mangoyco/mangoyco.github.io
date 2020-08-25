@@ -103,7 +103,7 @@ export default {
       let localAddress = window.localAddress
       $s.dispatch('getW',localAddress).then(()=>{
         this.wType = $s.getters.getWtype
-        this.warmrange = $s.getters.warmrange + '°'
+        this.warmrange = $s.getters.warmrange
       })
     },
   },

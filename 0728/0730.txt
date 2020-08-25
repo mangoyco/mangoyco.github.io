@@ -3,17 +3,12 @@ npm 6.4.1
 cnpm 6.1.1 npm@6.14.7
 
 
-
 company env
 node 10.9.0
 npm 6.2.0
 cnpm 6.1.1 npm@6.14.4 node@10.9.0
 
 https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?query=27.223.68.198&resource_id=6006&ie=utf8
-
-axios.get('http://wthrcdn.etouch.cn/weather_mini?city=%E9%9D%92%E5%B2%9B%E5%B8%82').then(res=>{
-      console.log(res)
-    })
 
 var lo="山东省", lc="青岛市"; var localAddress={city:"青岛市", province:"山东省"}
 
@@ -31,8 +26,8 @@ todoList:
 #toTop
 #customerRecord
 #v-lazy
-#author info
-#fist articl
+#authorInfo
+#fistArticl
 
 
 1px solid #d9d9d9
@@ -43,3 +38,7 @@ Try and fail, but don't fail to try.
 https://www.heweather.com/
 https://search.heweather.net/find?key=0e6b2177d7f3421d8495e805eef57c73&group=cn&lang=zh&location=340000
 http://pv.sohu.com/cityjson?ie=utf-8
+// Vue.prototype.$axios.get(`//wthrcdn.etouch.cn/weather_mini?city=${c}`).then(res => {
+//   commit('setW', res.data.data)
+//   reslove()
+// })
