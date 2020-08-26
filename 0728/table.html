@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+  <table border="1" border="1" bordercolor="black" width="300" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>四层</th>
+      <th>三层</th>
+      <th>二层</th>
+      <th>父集</th>
+    </tr>
+    <tr ng-repeat="x in names">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </table>
+
+  <script src="./ng.js"></script>
+  <script>
+    var data = [{
+      id: 1,
+      label: '一级 1',
+      children: [{
+        id: 4,
+        label: '二级 1-1',
+        children: [{
+          id: 9,
+          label: '三级 1-1-1'
+        }, {
+          id: 10,
+          label: '三级 1-1-2'
+        }, {
+          id: 101,
+          label: '三级 1-1-21'
+        }]
+      }]
+    }, {
+      id: 2,
+      label: '一级 2',
+      children: [{
+        id: 5,
+        label: '二级 2-1',
+        children: [{
+          id: 19,
+          label: '三级 1-1-1'
+        }, {
+          id: 110,
+          label: '三级 1-1-2'
+        }]
+      }, {
+        id: 6,
+        label: '二级 2-2',
+        children: [{
+          id: 29,
+          label: '三级 1-1-1'
+        }, {
+          id: 210,
+          label: '三级 1-1-2'
+        }]
+      }]
+    }, {
+      id: 3,
+      label: '一级 3',
+      children: [{
+        id: 7,
+        label: '二级 3-1',
+        children: [{
+          id: 39,
+          label: '三级 1-1-1'
+        }, {
+          id: 310,
+          label: '三级 1-1-2'
+        }]
+      }, {
+        id: 8,
+        label: '二级 3-2',
+        children: [{
+          id: 49,
+          label: '三级 1-1-1'
+        }, {
+          id: 410,
+          label: '三级 1-1-2'
+        }]
+      }]
+    }]
+    var nums = []
+    var arr = []
+
+    function markObj(obj) {
+      obj.children.forEach(e => {
+
+      })
+    }
+
+    // let num = 0
+    // let i
+    // function alllittle(list){
+    //   list.forEach((e,i,arr)=>{
+    //     if(e.children){
+    //       alllittle(e.children)
+    //     }else{
+    //       if(i===0){
+    //         num += arr.length
+    //       }
+    //     }
+    //   })
+    //   // obj.allitem = num
+    //   return num
+    // }
+
+    data.forEach(e => {
+      ooo(e)
+    })
+
+    //根据数组，返回最子集的数量
+    function getN(list) {
+      let n = 0
+      list.forEach(e => {
+        if (e.children) {
+          n += getN(e.children)
+        } else {
+          n += 1
+        }
+      })
+      return n
+    }
+
+    //把data 的对象加上最子集数量
+    function addN(data) {
+      data.forEach(e => {
+        if (e.children) {
+          e.all = getN(e.children)
+          addN(e.children)
+        } else {}
+      })
+    }
+
+
+
+    function ooo(obj) {
+      if (!obj.children) return
+      obj.clen = obj.children.length
+      obj.children.forEach(e => {
+        ooo(e)
+      })
+    }
+
+    //数组扁平化
+    function calrows(data) {
+      let arr = []
+      data.forEach((obj, index) => {
+        // let n = obj.label
+        if (obj.children) {
+          obj.childrenlength = obj.children.length
+          arr = arr.concat(calrows(obj.children))
+        } else {
+          arr.push(obj)
+          if (index === 0) {
+            obj.isfist = data.length
+            // obj[n] = data.length
+          }
+        }
+      })
+      return arr
+
+
+      // let arr = []
+      // if(!data.children){
+      //   return [data]
+      // }
+      // data.children.forEach(ele=>{
+      //   if(ele.children){
+      //     arr = arr.concat(calrows(ele.children))
+      //   }else{
+      //     arr.push(ele)
+      //   }
+      // })
+      // return arr
+      // let n = 0
+      // if(data.children && data.children.length>0){
+      //   data.children.forEach(ele=>{
+      //     if(!ele.children){
+      //       n += ele.length
+      //     }else{
+      //       n += calrows(ele)
+      //     }
+      //   })
+      // }
+      // return n
+    }
+
+    function mark(tree) {
+      tree.forEach(element => {
+        console.log(element)
+        if (!element.children) return
+        element.children[0][element.label + 'fst'] = true
+        element.children[0][element.label + 'fst'] = true
+        if (element.children && element.children.length > 0) {
+          mark(element.children)
+        }
+      });
+    }
+    // mark(data)
+    // console.log(data)
+    // var data = [
+    //   {title:'服务礼仪',
+    //     children:[
+    //       {
+    //         title:'服务用于',
+    //         children:[
+    //           {},
+    //           {}
+    //         ]
+    //       },
+    //       {
+    //         title:'服务态度',
+    //       }
+    //     ]
+    //   },
+    //   {title:'服务技巧'},
+    // ]
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+      // console.log(data)
+    });
+  </script>
+</body>
+
+</html>
