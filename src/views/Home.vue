@@ -122,6 +122,8 @@ export default {
   margin: 0 auto;
   margin-top: 30px;
   display: grid;
+  box-sizing: border-box;
+  padding: 0 6%;
   grid-template-columns: 2.8fr 1fr;
   gap: 50px;
   .right_warp{
