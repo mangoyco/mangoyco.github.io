@@ -17,15 +17,6 @@ const cardList = [
         desc:'测试的desc',
         date:'2020-01-01',
     },
-    // {
-    //     imgurl:'/static/img/sea.jpg',
-    //     title:'this is title 这是测试标题',
-    //     range:'js,Vue',
-    //     url:'2020/0201',
-    //     fileName:'test.md',
-    //     desc:'测试的desc',
-    //     date:'2020-01-01'
-    // },
     {
         imgurl:null,
         title:'this is title 这是测试标题',
