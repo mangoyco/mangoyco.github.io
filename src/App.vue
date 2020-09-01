@@ -55,6 +55,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/style/sass.scss';
 // $bc:'/asdsadsa';
 // @import url(var(--uuu));
 @import url('./assets/style/style.css');

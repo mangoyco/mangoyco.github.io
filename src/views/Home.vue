@@ -92,6 +92,9 @@ export default {
     })
   },
   mounted(){
+    if(performance.navigation.type === 0){
+      localStorage.removeItem('homeTop')
+    }
     this.$nextTick(()=>{
       window.scrollTo(0,localStorage.getItem('homeTop'))
       // document.documentElement.scrollTop = localStorage.getItem('homeTop')
