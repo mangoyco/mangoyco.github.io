@@ -3,9 +3,15 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './directive/vloading'
+import globalc from '@/components/globalcpnts'
 // import './assets/style/sass.scss'
 
+
 Vue.config.productionTip = false
+
+
+Vue.use(globalc)
+
 
 new Vue({
   router,

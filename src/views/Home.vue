@@ -37,7 +37,10 @@
                   </i>
               </div>
               <div class="flex-1 wx">
-                <i class="iconfont">&#xe623;</i>
+                <popover>
+                  <div>1123</div>
+                  <i slot="reference" class="iconfont">&#xe623;</i>
+                </popover>
               </div>
               <div class="flex-1 tq">
                   <Wsvg style="width:30px;height:30px;padding-top:3px;" :type="wType.type"/>
@@ -92,9 +95,9 @@ export default {
     })
   },
   mounted(){
-    if(performance.navigation.type === 0){
-      localStorage.removeItem('homeTop')
-    }
+    // if(performance.navigation.type === 0){
+    //   localStorage.removeItem('homeTop')
+    // }
     this.$nextTick(()=>{
       window.scrollTo(0,localStorage.getItem('homeTop'))
       // document.documentElement.scrollTop = localStorage.getItem('homeTop')
