@@ -38,7 +38,12 @@
               </div>
               <div class="flex-1 wx">
                 <popover>
-                  <div>1123</div>
+                  <div style="width:100%;height:10px;background-color:red;">
+                  </div>
+                  <!-- <div class="wx_pop">
+                    <img src="@img/wx_min.jpg" alt="" srcset="">
+                    <span>wx</span>
+                  </div> -->
                   <i slot="reference" class="iconfont">&#xe623;</i>
                 </popover>
               </div>
@@ -202,6 +207,13 @@ export default {
   }
   .tips{
     padding: 20px 10% 0;
+    .wx .wx_pop{
+      width: 100%;
+      font-size: 12px;
+      img{
+        width: 200%;
+      }
+    }
     .gh,.wx{
       border-right: 1px solid #d9d9d9;
     }
