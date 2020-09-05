@@ -38,12 +38,10 @@
               </div>
               <div class="flex-1 wx">
                 <popover>
-                  <div style="width:100%;height:10px;background-color:red;">
+                  <div class="pop">
+                    <img class="popimg" style="width:100%;" src="@img/wx_min.jpg" alt="" srcset="">
+                    <span class="poptit">需要请扫码</span>
                   </div>
-                  <!-- <div class="wx_pop">
-                    <img src="@img/wx_min.jpg" alt="" srcset="">
-                    <span>wx</span>
-                  </div> -->
                   <i slot="reference" class="iconfont">&#xe623;</i>
                 </popover>
               </div>
@@ -207,6 +205,19 @@ export default {
   }
   .tips{
     padding: 20px 10% 0;
+
+    .pop{
+      width: 7rem;
+      padding-bottom:4px;
+      .poptit{
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding-bottom: 4px;
+        transform: scale(0.9);
+        color: #666;
+      }
+    }
+    
     .wx .wx_pop{
       width: 100%;
       font-size: 12px;

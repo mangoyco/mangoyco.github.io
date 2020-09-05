@@ -154,7 +154,7 @@ export default {
     }
     background-color: rgba($color: #fff, $alpha: 0);
   }
-  background-image: url('../assets/img/bg-sea3.jpg');
+  background-image: url('../assets/img/bg-sea_min.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position-x: 50%;
