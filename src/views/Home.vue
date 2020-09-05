@@ -208,13 +208,13 @@ export default {
 
     .pop{
       width: 7rem;
-      padding-bottom:4px;
       .poptit{
         font-size: 12px;
         letter-spacing: 1px;
         padding-bottom: 4px;
         transform: scale(0.9);
         color: #666;
+        padding-bottom: 4px;
       }
     }
     

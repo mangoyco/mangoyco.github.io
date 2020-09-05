@@ -20,8 +20,6 @@ export default {
 
 <style lang="scss" scoped>
 .pop_container{
-  // width: 100%;
-  // height: 100%;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
