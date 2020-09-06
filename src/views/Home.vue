@@ -37,12 +37,12 @@
                   </i>
               </div>
               <div class="flex-1 wx">
-                <popover>
+                <popover :trigger="'click'">
                   <div class="pop">
                     <img class="popimg" style="width:100%;" src="@img/wx_min.jpg" alt="" srcset="">
                     <span class="poptit">需要请扫码</span>
                   </div>
-                  <i slot="reference" class="iconfont">&#xe623;</i>
+                  <i title="you can click Me" slot="reference" class="iconfont">&#xe623;</i>
                 </popover>
               </div>
               <div class="flex-1 tq">

@@ -1,6 +1,6 @@
 <template>
   <span class="pop_container">
-    <div ref="popover" class="pop_popover">
+    <div v-show="popShow" ref="popover" class="pop_popover hidden">
       <slot>
 
       </slot>
@@ -12,18 +12,63 @@
 <script>
 export default {
   name:'popover',
+  props:{
+    trigger:{
+      type: String,
+      default:'click',
+      validator(val){
+        return ['click', 'hover'].indexOf(val) !== -1
+      }
+    }
+  },
+  watch:{
+    trigger(n,o){
+      console.log(n,o)
+      this.popShow = false
+      this.removeListener()
+      this.setListener()
+    }
+  },
+  data(){
+    return{
+      popShow:true,
+      reference:undefined,
+    }
+  },
   mounted(){
     this.setPosition()
+    this.setListener()
   },
   methods:{
     setPosition(){
       const getCS = window.getComputedStyle
       const popdom = this.$refs.popover
-      let rw = parseInt(getCS(this.$slots.reference[0].elm).width) / 2
+      this.reference = this.$slots.reference[0].elm
+      let rw = parseInt(getCS(this.reference).width) / 2
       let pw = parseInt(getCS(popdom).width) / 2
-      console.log(`translateX(-${pw - rw})`)
+      popdom.classList.remove('hidden') // 暂定这种方式吧...
+      this.popShow = false
       popdom.style.transform = `translate(-${pw - rw}px,calc(-100% - 2px))`
+    },
+    showTrigger(){
+      this.popShow = !this.popShow
+    },
+    setListener(){
+      if(this.trigger === 'click'){
+        this.reference.addEventListener('click',this.showTrigger)
+      }else if(this.trigger === 'hover'){
+        this.reference.addEventListener('mouseenter',this.showTrigger)
+        this.reference.addEventListener('mouseleave',this.showTrigger)
+      }
+    },
+    removeListener(){
+      this.reference.removeEventListener('click',this.showTrigger)
+      this.reference.removeEventListener('mouseenter',this.showTrigger)
+      this.reference.removeEventListener('mouseleave',this.showTrigger)
     }
+  },
+  beforeDestroy(){
+    this.removeListener()
   }
 }
 </script>
@@ -42,6 +87,9 @@ export default {
     z-index: 100;
     top: -6px;
     transform: translateY(-100%);
+    &.hidden{
+      visibility: hidden;
+    }
     &::before{
       content: '';
       position: absolute;
