@@ -60,7 +60,6 @@ export default {
       border-right: 8px solid transparent;
       border-top: 5px solid #fff;
       border-bottom: 5px solid transparent;
-      // background-color: #000;
       top:calc(100% - 1px);
       left: 50%;
       transform: translateX(-50%);
