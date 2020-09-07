@@ -46,7 +46,7 @@ export default {
       this.reference = this.$slots.reference[0].elm
       let rw = parseInt(getCS(this.reference).width) / 2
       let pw = parseInt(getCS(popdom).width) / 2
-      popdom.classList.remove('hidden') // 暂定这种方式吧...
+      popdom.classList.remove('hidden') // 暂定这种方式吧，不过应该是浪费了一次dom操作，修改了display...
       this.popShow = false
       popdom.style.transform = `translate(-${pw - rw}px,calc(-100% - 2px))`
     },
