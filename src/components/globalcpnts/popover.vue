@@ -1,6 +1,6 @@
 <template>
   <span class="pop_container">
-    <div v-show="popShow" ref="popover" class="pop_popover hidden">
+    <div ref="popover" class="pop_popover" :class="{'hidden':hid,'show_anim':popShow,'hide_anim':!popShow}">
       <slot>
 
       </slot>
@@ -23,7 +23,6 @@ export default {
   },
   watch:{
     trigger(n,o){
-      console.log(n,o)
       this.popShow = false
       this.removeListener()
       this.setListener()
@@ -31,7 +30,8 @@ export default {
   },
   data(){
     return{
-      popShow:true,
+      hid:false,
+      popShow:false,
       reference:undefined,
     }
   },
@@ -46,19 +46,29 @@ export default {
       this.reference = this.$slots.reference[0].elm
       let rw = parseInt(getCS(this.reference).width) / 2
       let pw = parseInt(getCS(popdom).width) / 2
-      popdom.classList.remove('hidden') // 暂定这种方式吧，不过应该是浪费了一次dom操作，修改了display...
-      this.popShow = false
+      this.hid = true
+      // popdom.classList.add('hidden')
+      // this.popShow = false
       popdom.style.transform = `translate(-${pw - rw}px,calc(-100% - 2px))`
     },
     showTrigger(){
+      this.hid = false
       this.popShow = !this.popShow
     },
     setListener(){
+      const popdom = this.$refs.popover
       if(this.trigger === 'click'){
         this.reference.addEventListener('click',this.showTrigger)
       }else if(this.trigger === 'hover'){
         this.reference.addEventListener('mouseenter',this.showTrigger)
         this.reference.addEventListener('mouseleave',this.showTrigger)
+      }
+      if(popdom.style.animation !== undefined){
+        popdom.addEventListener('animationend',()=>{
+          if(!this.popShow){
+            this.hid = true
+          }
+        })
       }
     },
     removeListener(){
@@ -88,7 +98,14 @@ export default {
     top: -6px;
     transform: translateY(-100%);
     &.hidden{
-      visibility: hidden;
+      // visibility: hidden;
+      display: none;
+    }
+    &.show_anim{
+      animation: pop_show .8s ease forwards ;
+    }
+    &.hide_anim{
+      animation: pop_hide .8s ease forwards ;
     }
     &::before{
       content: '';
@@ -112,6 +129,31 @@ export default {
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+}
+
+
+
+
+@keyframes pop_show {
+  from{
+    margin-top: 16px;
+    opacity: 0;
+  };
+  to{
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@keyframes pop_hide {
+  from{
+    margin-top: 0px;
+    opacity: 1;
+  };
+  to{
+    margin-top: 16px;
+    opacity: 0;
   }
 }
 </style>
