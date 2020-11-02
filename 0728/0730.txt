@@ -2,6 +2,8 @@ node 10.13.0
 npm 6.4.1
 cnpm 6.1.1 npm@6.14.7
 
+Angular CLI: 7.2.2
+
 
 company env
 node 10.9.0
