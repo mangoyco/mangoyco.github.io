@@ -7,7 +7,7 @@
       </div>
       <div class="right_warp">
         <div class="author">
-          <a href="https://github.com/mangoyco" class="github-corner" aria-label="View source on GitHub">
+          <a href="https://github.com/mangoyco" target="blank" class="github-corner" aria-label="View source on GitHub">
             <svg width="60" height="60"
               viewBox="0 0 250 250" style="fill:#49b1f5; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
               aria-hidden="true">
@@ -46,7 +46,8 @@
                 </popover>
               </div>
               <div class="flex-1 tq">
-                  <Wsvg style="width:30px;height:30px;padding-top:3px;" :type="wType.type"/>
+                  <!-- <Wsvg style="width:30px;height:30px;padding-top:3px;" :type="wType.type"/> -->
+                  <Wsvg style="width:30px;height:30px;padding-top:3px;" :type="'%u6674'"/>
               </div>
             </div>
             <div class="row tips_text">
@@ -82,6 +83,8 @@ export default {
   },
   computed:{
     wText(){
+      const arr = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+      return arr[new Date().getDay()]
       return this.wType.t ? this.wType.t : ''
     }
   },

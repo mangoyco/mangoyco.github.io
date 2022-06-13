@@ -52,6 +52,7 @@ export default {
         },
         initMd(){
             let u = `//mangoyco.github.io/docs/${this.$route.params.pathMatch}.md`
+            // let u = `/static/source/t.md`
             this.$axios.get(u).then(res=>{
                 if(this.$route.name !== 'Blog')return
                 this.doms = window.marked(res.data)
