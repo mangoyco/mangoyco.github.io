@@ -1,6 +1,15 @@
 const cardList = [
     {
-        imgurl:'https://ainyi.com/krryblog/upload/2019/05/09/cd05bcc9-367e-4195-8b0e-84f6ede337b8.jpg',
+        imgurl: '/static/img/work.jpg',
+        title: '如果您是从',
+        range: '新置顶,introduce',
+        url: '2022/ending',
+        fileName: 'test.md',
+        desc: 'em...没想到上次修改竟然是在20年8月😅...太空了？别走！听我解(jiao)释(bian)',
+        date: '2022-06',
+    },
+    {
+        imgurl: '/static/img/summer.jpg',
         title:'Thx for coming',
         range:'置顶,introduce',
         url:'2020/introduce',
@@ -9,17 +18,8 @@ const cardList = [
         date:'2020-08-08',
     },
     {
-        imgurl:'https://ainyi.com/krryblog/upload/2019/05/09/cd05bcc9-367e-4195-8b0e-84f6ede337b8.jpg',
-        title:'this is title 这是测试标题',
-        range:'js,Vue',
-        url:'2020/0101',
-        fileName:'test.md',
-        desc:'测试的desc',
-        date:'2020-01-01',
-    },
-    {
         imgurl:null,
-        title:'this is title 这是测试标题',
+        title:'第一个用来测试的文件~',
         range:'js,Vue',
         url:'2020/0201',
         fileName:'test.md',

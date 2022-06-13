@@ -29,14 +29,8 @@ export default {
     created(){
         // this.loading = true
         this.appendMarked()
-        window.debug = ()=>{
-            this.loading = !this.loading
-        }
     },
     mounted(){
-        window.debug = ()=>{
-            console.log(this.catalogs)
-        }
         // for scroll
         // this.$route.meta.y = window.innerHeight - 60
     },
