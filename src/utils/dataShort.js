@@ -1,6 +1,6 @@
 const cardList = [
     {
-        imgurl: '/static/img/work.jpg',
+        imgurl: '/wyc/static/img/work.jpg',
         title: '如果您是从简历找到这里',
         range: '新置顶,introduce',
         url: '2022/ending',
@@ -9,7 +9,7 @@ const cardList = [
         date: '2022-06',
     },
     {
-        imgurl: '/static/img/summer.jpg',
+        imgurl: '/wyc/static/img/summer.jpg',
         title:'Thx for coming',
         range:'置顶,introduce',
         url:'2020/introduce',
